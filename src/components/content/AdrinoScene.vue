@@ -8,7 +8,7 @@
       <TextBlock>
         <p>Currently</p>
         <p class="big">
-          I am
+          I am a
           <strong class="color">JavaScript Developer</strong><br/>
           @
           <a

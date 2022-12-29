@@ -1,7 +1,7 @@
 <template>
   <section>
     <TitleSection id="exp">
-      <TitleFunction selectorClass="experience" subtitle="//WorkShowcase"></TitleFunction>
+      <TitleFunction selectorClass="experience" subtitle="// WorkShowcase"></TitleFunction>
   
     </TitleSection>
     <div id="clouds">
