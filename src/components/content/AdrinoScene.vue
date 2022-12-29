@@ -19,7 +19,7 @@
           >.
         </p>
         <p>
-          Adrino's in-house ecosystem consists of original Rich Media creations, classic Display adverts, Native adverts.
+          Adrino's in-house ecosystem consists of original rich media creations, classic display adverts, native adverts.
         </p>
       </TextBlock>
       <template #animeContainer>

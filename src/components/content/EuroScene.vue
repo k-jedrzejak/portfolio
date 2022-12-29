@@ -8,7 +8,7 @@
         <TextBlock>
           <p>From August 2019 to February 2021 </p>
           <p class="big">
-            I was
+            I was a
             <strong class="color">Junior Frontend Developer</strong> <br/>
             @ Euro-Net. 
             </p>
@@ -33,8 +33,8 @@
   
       <SceneSection id="euro2">
         <TextBlock>
-          <p class="big"><strong class="color">Creating and implementation landing pages of products and promotions</strong></p>
-          <p>were my responsibilites.</p>
+          <p>My responsibilites were</p>
+          <p class="big"><strong class="color">creating and implementing landing pages of products and promotions</strong></p>
         </TextBlock>
       </SceneSection>
 

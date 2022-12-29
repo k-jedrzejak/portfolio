@@ -8,7 +8,7 @@
       <TextBlock>
         <p>This adventure lasted from February 2021 to December 2022</p>
         <p class="big">
-          I was
+          I was a
           <strong class="color">Frontend Developer</strong><br/>
           @
           <a
