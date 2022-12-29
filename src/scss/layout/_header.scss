@@ -1,0 +1,26 @@
+//
+// Common
+//------------------------------------------
+
+#header {
+    @include size(100%,8rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 $indent-xs $indent-xxxl;
+    background: linear-gradient(180deg, $color-black 3rem,rgba(0,0,0,0));
+}
+
+.header-container {
+    @include flex(center, space-between);
+    @include size(auto, 3rem);
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.breadcrumbs {
+    color: $color-primary;
+    font-size: $font-m;
+    font-weight: bold;
+}

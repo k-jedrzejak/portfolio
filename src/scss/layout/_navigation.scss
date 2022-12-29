@@ -1,0 +1,150 @@
+//
+// Common
+//------------------------------------------
+
+.nav {
+    @include size(100vw, 100vh);
+    @include absolute(0, 0, null, null);
+    z-index: 9999;
+    padding: 8rem 1rem 4rem;
+    text-align: right;
+    font-size: $font-menu-mobile;
+    transform: translate3d(110%,0,0);
+    @include transition(0.5s);
+
+    .nav-items {
+
+        .nav-item {
+            padding-bottom: $indent-m;
+            @include transition;
+
+            .nav-link {
+                color: $color-white;
+
+                &.active {
+                    color: $color-gray;
+                }         
+            }
+           
+            &:hover {
+                color: $color-primary;
+            }
+        }
+        
+        .social-item {
+            display: inline-block;
+
+            &:nth-last-child(2) {
+                margin-right: $indent-m;
+            }
+
+            .social-link {
+   
+                svg {
+                    display: block;
+                    // @include relative(2px);
+                    @include size(1.2rem, 1.2rem);
+                    @include transition();
+
+                    path {
+                        fill: $color-primary;
+                    }
+            
+                }
+            
+                &:hover {
+                    svg {
+                        path {
+                            fill: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-nav-button {
+    @include flex(center, space-between);
+    @include transition();
+    @include size(1rem, 3rem);
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    padding: $indent-xs;
+    background: none;
+    border: 0;
+
+    .dots {
+        @include flex();
+        @include relative();
+        @include size(0.25rem, 0.25rem);
+        border-radius: 0.25rem;
+        background: $color-primary;
+        transition: all .4s cubic-bezier(.19,1,.22,1);
+    }
+}
+
+.header-nav-button-close {
+    @include absolute(0, 0);
+    padding: $indent-xxs $indent-xs;
+    color: $color-primary;
+    display: flex;
+}
+
+.is-nav-open {
+    overflow: hidden;
+    .container {
+        opacity: 0.1;
+      }
+  
+      .header-nav-button {
+        opacity: 0;
+      }
+
+    .nav {
+        transition: transform 1s cubic-bezier(.86,0,.07,1);
+        transform: translateZ(0);
+    }
+}
+
+
+//
+// Screen > 768px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-tablet) {
+    .nav {
+        position: inherit;
+        transform: none;
+        @include size(auto, auto);
+        padding: 0;
+        font-size: $font-menu-desktop;
+
+        .nav-items {
+            @include flex();
+
+            .nav-item {
+                padding-bottom: 0;
+
+                &:not(:last-child) {
+                    margin-right: $indent-m;
+                }
+            }
+        }
+    }
+
+    .header-nav-button,
+    .header-nav-button-close {
+        display: none;
+    }
+
+    .is-nav-open { 
+        overflow: auto;
+
+        .container {
+            opacity: 1;
+            
+          }
+    }
+
+}

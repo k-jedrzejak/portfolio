@@ -1,0 +1,72 @@
+//
+// Common
+//-------------------------------------------
+
+
+body {  
+    font-family: $font-family-base;
+    color: $color-white;
+    background: $color-black;
+    text-shadow: 0.03em 0.03em #0e1212, 0.01em -0.01em #0e1212, -0.01em 0.03em #0e1212, -0.02em -0.01em #0e1212;
+}
+
+a {
+    color: $color-white;
+    @include transition;
+
+    &:visited {
+        color: inherit;
+    }
+    
+    &:hover {
+        color: $color-primary;
+      }
+}
+
+.color {
+    color: $color-primary;
+}
+
+.gray {
+    color: $color-gray;
+}
+
+.big {
+    display: block;
+    font-size: $font-xxl;
+    font-weight: 700;
+    word-spacing: -0.1em;
+    letter-spacing: -0.05em;
+    width: 70vw;
+    line-height: 1.2;
+  }
+
+.title {
+    display: flex;
+    font-size: $font-xxl;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    word-break: break-word;
+    hyphens: auto;
+    z-index: 1;
+}
+
+
+// scrollbar
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $color-black; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $color-primary; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+   opacity: .9;
+  }
