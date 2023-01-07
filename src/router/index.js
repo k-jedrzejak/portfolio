@@ -38,8 +38,8 @@ router.beforeEach(() => {
 })
 
 router.afterEach(() => {
+  window.scroll(0, 0)
   setTimeout(() => {
-    window.scroll(0, 0)
     NProgress.done()
     document.body.classList.remove(
       'load',

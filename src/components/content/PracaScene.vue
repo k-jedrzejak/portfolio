@@ -21,9 +21,8 @@
           Praca.pl is one of the largest service with job offers in Poland </p>
       </TextBlock>
       <template #animeContainer>
-        <AstroWork />
+        <AstroWork :isPlaying="isPlaying"/>
         <PracaLogo />
-        <!-- <div class="praca-background"></div> -->
       </template>
       </SceneSection>
   
@@ -63,7 +62,10 @@
       SceneSection,
       PracaLogo,
       AstroWork
-  }
+    },
+    props: {
+        isPlaying: Boolean,
+    },
   }
   </script>
   
@@ -79,19 +81,6 @@
     @include absolute(null, 3rem, 10rem, null);
     @include size(250px);
   }
-
-  .praca-background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: url('../../assets/praca-bg.svg') no-repeat top;
-    background-size: cover;
-    opacity: 0.6;
-    z-index: -1;
-  }
-
 
 
   // Tablet

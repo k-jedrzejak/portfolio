@@ -1,7 +1,7 @@
 <template>
     <div id="planetScene" class="planet-scene">
         <div class="planet-wrapper">
-          <TheToaster />
+          <TheToaster :isPlaying="isPlaying"/>
           <div class="planet"></div>
         </div>
     </div>
@@ -9,26 +9,39 @@
 
 <script>
 import TheToaster from '../toster/TheToaster.vue';
+import { toggleGsapAnimations} from '@/utils'
 import gsap from 'gsap';
+
+const timeline = gsap.timeline();
 
 export default({
   name: "ThePlanet",
   components: {TheToaster},
+  props: {
+      isPlaying: Boolean,
+  },
   methods: {
     init() {
       const planet = document.querySelector('.planet');
-
-      gsap.timeline({repeat: -1})
+      
+      timeline
       .from(planet, {
         rotate: 360,
         transformOrigin: '50% 50%',
         duration: 250,
+        repeat: -1
       })
     }
   },
   mounted() {
-      this.init()
-  }
+    this.init();
+    toggleGsapAnimations(this.isPlaying, timeline);
+  },
+  watch: {
+    isPlaying() {
+      toggleGsapAnimations(this.isPlaying, timeline);
+    },
+  },
 })
 </script>
 

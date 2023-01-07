@@ -1,5 +1,5 @@
 <template>
-  <section class="scene" :id="scene">
+  <section :id="scene" class="scene" >
     <div class="title-container">
       <slot></slot>
     </div>
@@ -35,8 +35,6 @@ export default {
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: center;
-
-
 
   .title {
     margin-right: 0;

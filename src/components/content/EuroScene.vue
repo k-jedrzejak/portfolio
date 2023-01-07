@@ -25,9 +25,8 @@
           </p>
         </TextBlock>
         <template #animeContainer>
-          <ThePlanet />
+          <ThePlanet :isPlaying="isPlaying"/>
           <EuroLogo />
-          <!-- <div class="euro-background"></div> -->
         </template>
       </SceneSection>
   
@@ -64,7 +63,10 @@
       SceneSection,
       EuroLogo,
       ThePlanet
-    }
+    },
+    props: {
+      isPlaying: Boolean,
+    },
   }
   </script>
 
@@ -86,19 +88,6 @@
   @include size(60rem, 60rem);
   @include relative(-2rem, null, null, -25rem);
 }
-
-// .euro-background {
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   background: url('../../assets/galaxy.jpg') no-repeat center;
-//   background-size: cover;
-//   opacity: 0.2;
-//   z-index: -1;
-// }
-
 
   // Tablet
 @media screen and (min-width: $screen-tablet) {

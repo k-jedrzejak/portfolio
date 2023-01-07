@@ -1,16 +1,21 @@
-
 <template>
     <AstroMagentoSvg />
 </template>
 
 <script>
 import AstroMagentoSvg from './AstroMagentoSvg.vue';
-import gsap from 'gsap';
 import {loopSineinOut} from '@/constants'
+import { toggleGsapAnimations} from '@/utils'
+import gsap from 'gsap';
+
+const timeline = gsap.timeline();
 
 export default ({
     name: 'AstroMagento',
     components: { AstroMagentoSvg },
+	props: {
+		isPlaying: Boolean,
+	},
     methods: {
         init() {
         const head = document.querySelector('#astroMagento .head');
@@ -19,10 +24,10 @@ export default ({
 		const handLeft = document.querySelector('#astroMagento .hand-left');
 		const twine = document.querySelector('#astroMagento .twine');
 		const magento = document.querySelector('#astroMagento .magento');
-        const tl = gsap.timeline();
+	
 
         handRight.forEach((item) => {
-				tl.from(item, {
+			timeline.from(item, {
 					y: "20",
 					duration: 2,
 					repeatDelay: 4,
@@ -30,9 +35,9 @@ export default ({
 				},0)
 			})
 			
-			tl
+			timeline
 			.from(astro, {
-				y: 25,
+				y: 45,
 				rotateZ: 1,
 				duration: 3,
 				...loopSineinOut
@@ -81,11 +86,17 @@ export default ({
 					repeatDelay: 1,
 					...loopSineinOut
 			},0)
-        }
+        },
     },
-    mounted() {
-        this.init();
-    }
+	mounted() {
+		this.init();
+			toggleGsapAnimations(this.isPlaying, timeline);
+		},
+	watch: {
+		isPlaying() {
+			toggleGsapAnimations(this.isPlaying, timeline);
+		},
+	},
 });
 
 </script>

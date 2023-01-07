@@ -23,9 +23,8 @@
         </p>
       </TextBlock>
       <template #animeContainer>
-        <UfoRhino />
+        <UfoRhino :isPlaying="isPlaying"/>
         <AdrinoLogo />
-        <!-- <div class="adrino-background"></div> -->
       </template>
     </SceneSection>
 
@@ -56,32 +55,21 @@ export default {
     SceneSection,
     UfoRhino,
     AdrinoLogo
-}
+  },
+  props: {
+      isPlaying: Boolean,
+  },
 }
 </script>
 
 <style lang="scss" >
-
-
-// .adrino-background {
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   background: url('../../assets/gal.jpg') no-repeat center;
-//   background-size: cover;
-//   opacity: 0.4;
-// }
-
-
 #adrinoLogo {
   @include absolute(15vh, null, null, 20vw);
   z-index: 10;
 }
 
 #ufoRhino {
-	@include absolute(-30vh, 0);
+  @include absolute(-30vh, 0);
   @include size(320px);
   z-index: 3;
 }
@@ -104,10 +92,9 @@ export default {
     @include absolute(20vh, null, null, 5vw);
   }
 
-#ufoRhino {
-  @include absolute(16vh, 0);
-	@include size(auto);
+  #ufoRhino {
+    @include absolute(16vh, 0);
+    @include size(auto);
+  }
 }
-}
-
 </style>

@@ -4,31 +4,38 @@
 
 <script>
 import TheToasterSvg from './TheToasterSvg.vue';
-import gsap from 'gsap';
+import { toggleGsapAnimations} from '@/utils';
 import {loop, loopSineinOut, loopJump} from '@/constants'
+import gsap from 'gsap';
+
+const timeline = gsap.timeline();
 
 export default ({
 	name: "TheToaster",
 	components: {TheToasterSvg},
+	props: {
+      isPlaying: Boolean,
+	},
 	methods: {
 		init() {
 			const stars = document.querySelectorAll('#toaster .star');
 			const toaster = document.querySelector('.toaster-img');
 			const shadow = document.querySelector('.shadow');
 			const tosterBtn = document.querySelector('.toster-button');
-			const tosterEyes = document.querySelector('.toster-eyes');
+			const tosterEyes = document.querySelector('.toster-eyes');			
 			const tosterMouth = document.querySelector('.toster-mouth');
 			const bread = document.querySelector('.bread');
 			const breadEyes = document.querySelectorAll('.bread-eye');
+			const breadEyesPupils = document.querySelectorAll('.pupil');
 			const breadArm1 = document.querySelector('.bread-arm1');
 			const breadArm2 = document.querySelector('.bread-arm2');
-			const tl = gsap.timeline();
 
+			console.log(breadEyesPupils)
 		/* stars */	
 		
 		stars.forEach((star, index) => {
 			if(index%2 == 0) {
-				tl.from(star, {
+				timeline.from(star, {
 					rotate: -360,
 					y: 100,
 					transformOrigin: '100% 50%',
@@ -37,7 +44,7 @@ export default ({
 				})
 			}
 			else{
-				tl.from(star, {
+				timeline.from(star, {
 					y: 60,
 					rotateZ: 360,
 					transformOrigin: '50% 50%',
@@ -48,7 +55,7 @@ export default ({
 				},0)
 			}
 
-			tl.to(star, {
+			timeline.to(star, {
 				scale: .5,
 				duration: 1,
 				...loopSineinOut
@@ -56,7 +63,7 @@ export default ({
 		});
 
 
-		tl
+		timeline
 
 		/* toaster */	
 		.from(toaster, {
@@ -96,12 +103,13 @@ export default ({
             transformOrigin: '50% 50%',
 			repeat: -1,
 			repeatDelay: 2,
-		})
+		},0)
 		.to(tosterEyes, {
 			scaleY: 1,
+			transformOrigin: '50% 50%',
             repeat: -1,
             repeatDelay: 2,
-		})
+		},1)
 
 		/* toaster mouth */	
 		.from(tosterMouth, {
@@ -109,12 +117,13 @@ export default ({
             transformOrigin: '50% 50%',
 			repeat: -1,
 			repeatDelay: 3
-		})
+		},0)
 		.to(tosterMouth, {
 			scaleY: 1,
+			transformOrigin: '50% 50%',
             repeat: -1,
             repeatDelay: 3,
-		})
+		},1)
 
 		/* bread*/	
 		.from(bread, {
@@ -159,30 +168,41 @@ export default ({
 
 		/* bread eyes */
 		breadEyes.forEach((eye) => {
-			tl
+			timeline
 			.from(eye, {
-				rotate: 120,
+			scaleY: 0.1,
+			repeat: -1,
+			repeatDelay: 6,
+			transformOrigin: '50% 50%',
+			},0)
+			.to(eye, {
+				scaleY: 1,
+				repeat: -1,
+				repeatDelay: 6,
 				transformOrigin: '50% 50%',
+			},1)
+		})
+		breadEyesPupils.forEach((pupil) => {
+			timeline
+			.from(pupil, {
+				rotate: 160,
+				transformOrigin: '100% 60%',
 				duration: 2,
 				repeatDelay: 2,
 				...loop
 			},0)
-			.from(eye, {
-			scaleY: 0.1,
-			repeat: -1,
-			repeatDelay: 8,
-			})
-			.to(eye, {
-				scaleY: 1,
-				repeat: -1,
-				repeatDelay: 8,
-			})
 		})
+		
 		}
 	},
 	mounted() {
-		this.init()
-	}
-	
+		this.init();
+		toggleGsapAnimations(this.isPlaying, timeline);
+	},
+	watch: {
+		isPlaying() {
+		toggleGsapAnimations(this.isPlaying, timeline);
+		},
+	},
 })
 </script>

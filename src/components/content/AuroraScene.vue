@@ -24,8 +24,7 @@
       </TextBlock>
       <template #animeContainer>
         <AcLogo />
-        <AstroMagento />
-        <!-- <div class="aurora-background"></div> -->
+        <AstroMagento :isPlaying="isPlaying"/>
       </template>
     </SceneSection>
 
@@ -64,32 +63,22 @@ export default {
     SceneSection,
     AcLogo,
     AstroMagento
-}
+},
+  props: {
+      isPlaying: Boolean,
+  },
 }
 </script>
 
-<style lang="scss" >
-
-// .aurora-background {
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   background: url('../../assets/galaxy1.jpg') no-repeat center;
-//   opacity: 0.2;
-// }
-
-
-#acLogo {
+<style lang="scss">#acLogo {
   @include size(90vw, 90vw);
   @include absolute(10%, null, null, -9vh);
   z-index: 10;
 }
 
 #astroMagento {
-	@include absolute(-100px, 0);
-	@include size(250px);
+  @include absolute(-100px, 0);
+  @include size(250px);
   z-index: 3;
 }
 
@@ -111,9 +100,9 @@ export default {
     @include absolute(calc(50% - 15vw), null, null, -10vw);
   }
 
-#astroMagento {
-	@include size(400px);
-}
+  #astroMagento {
+    @include size(400px);
+  }
 }
 
 </style>

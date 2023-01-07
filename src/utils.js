@@ -16,3 +16,13 @@ export function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+
+// switch animation
+
+export function toggleGsapAnimations(isPlaying, timeline) {
+  if (isPlaying) {
+    timeline.play();
+  } else {
+    timeline.pause();
+  }
+}
