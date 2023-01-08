@@ -30,7 +30,6 @@ export default ({
 			const breadArm1 = document.querySelector('.bread-arm1');
 			const breadArm2 = document.querySelector('.bread-arm2');
 
-			console.log(breadEyesPupils)
 		/* stars */	
 		
 		stars.forEach((star, index) => {

@@ -6,7 +6,6 @@
     <AuroraScene :isPlaying="isPlaying.AstroMagento"/>
     <EuroScene :isPlaying="isPlaying.ToasterPlanet"/>
     <PracaScene :isPlaying="isPlaying.AstroWork"/>
-    <UnicornScene />
   </div>
 </template>
 
@@ -19,7 +18,6 @@ import AuroraScene from '@/components/content/AuroraScene.vue';
 import EuroScene from '@/components/content/EuroScene.vue';
 import PracaScene from '@/components/content/PracaScene.vue';
 import ExpScene from '@/components/content/ExpScene.vue';
-import UnicornScene from '@/components/content/UnicornScene.vue';
 import { ref, onMounted } from 'vue';
 
 export default {
@@ -31,7 +29,7 @@ export default {
     EuroScene,
     PracaScene,
     ExpScene,
-    UnicornScene
+ 
   },
   data() {
     return {
