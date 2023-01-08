@@ -417,7 +417,7 @@ export default {
           scrollTrigger: {
             trigger: "#praca3",
             start: "top top",
-            end: "+=100",
+            end: "+=10",
             scrub: 1,
             pin: false,
             onLeave: () => this.isPlaying.AstroWork = false,
