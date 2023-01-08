@@ -10,7 +10,7 @@ export const routes = [
     component: HomeView,
   },
   {
-    path: '/about',
+    path: 'about',
     name: '.about',
     component: AboutView,
   }
@@ -46,6 +46,5 @@ router.afterEach(() => {
     )
   }, 500)
 })
-
 
 export default router
