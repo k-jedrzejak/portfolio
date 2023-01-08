@@ -18,7 +18,6 @@ export function random(min, max) {
 
 
 // switch animation
-
 export function toggleGsapAnimations(isPlaying, timeline) {
   if (isPlaying) {
     timeline.play();

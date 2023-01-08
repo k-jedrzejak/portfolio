@@ -1,5 +1,5 @@
 <template>
-  <section :id="scene" class="scene" >
+  <section :id="scene" class="scene"  >
     <div class="title-container">
       <slot></slot>
     </div>

@@ -2,6 +2,7 @@
   <header id="header">
     <div class="header-container">
       <div class="breadcrumbs animate__animated animate__slideInLeft">{{ $route.name }}</div>
+
       <NavSection @openMenu="openMenu" @closeMenu="closeMenu"/>
     </div>
   </header>

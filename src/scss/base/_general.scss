@@ -13,6 +13,7 @@ body {
 a {
     color: $color-white;
     @include transition;
+    text-decoration: none;
 
     &:visited {
         color: inherit;
@@ -20,7 +21,7 @@ a {
     
     &:hover {
         color: $color-primary;
-      }
+    }
 }
 
 .color {
@@ -56,17 +57,17 @@ a {
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
+}
   
   ::-webkit-scrollbar-track {
     background: $color-black; 
-  }
+}
    
   ::-webkit-scrollbar-thumb {
     background: $color-primary; 
     border-radius: 10px;
-  }
+}
   
   ::-webkit-scrollbar-thumb:hover {
    opacity: .9;
-  }
+}

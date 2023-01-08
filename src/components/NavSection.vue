@@ -18,14 +18,18 @@
                 <span class="label">✕</span>
             </button>
             <ul class="nav-items">
-                <li class="nav-item">
-                    <router-link to="/" title="Home" class="nav-link" ref="navlink">.all</router-link>
+                <li class="nav-item"
+                    v-for="(router, index) in this.links"
+                    :key="index">
+                    <a  :href="$router.resolve({name: router.name}).href"  
+                        :title= router.name
+                        :id="`${router.name.replace('.','')}`"
+                        class="nav-link" >{{router.name}}</a>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/about" title="About me" class="nav-link" ref="navlink">.about</router-link>
-                </li>
-                <li class="nav-item">
-                    <a :href="`mailto:${data.email}`" title="Send me an email" class="nav-link">.contact</a >
+                    <a :href="`mailto:${data.email}`" 
+                        title="Send me an email" 
+                        class="nav-link">.contact</a >
                 </li>
                 <li
                     v-for="(link, index) in socialLinks"
@@ -45,13 +49,15 @@
 </template>
   
 <script>
-    import {fetchData} from '@/utils'
+    import {fetchData} from '@/utils';
+    import {routes} from '../router/index';
 
     export default {
         name: 'NavSection',
         data() {
             return {
                 data: {},
+                links: routes,
                 socialLinks: [
                     {
                         name: 'LinkedIn',
@@ -66,7 +72,10 @@
             }
         },
         async mounted() {
-            this.data = await fetchData()
+            this.data = await fetchData()   
+            let activeRouterName = this.$router.currentRoute.value.name.replace('.','')
+            let activeNavItem = document.querySelector(`#${activeRouterName}`)
+            activeRouterName  === activeNavItem.id ? activeNavItem.classList.add('active') : ''; 
         },
         methods: {
             openMenu() {
@@ -75,7 +84,9 @@
             closeMenu() {
                 this.$emit('closeMenu')
             }
-        }
+        },
+
+       
     }
 </script>
   

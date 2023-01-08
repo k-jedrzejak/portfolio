@@ -1,5 +1,5 @@
 <template>
-  <section class="scene">
+  <section class="scene" >
     <div class="static-container">
       <slot></slot>
     </div>
@@ -12,12 +12,13 @@
 <script>
 export default {
   name: 'SceneSection',
+  props: {
+    intro: Boolean
+  }
 }
 </script>
 
 <style lang="scss">
-
-
 
 .scene {
   min-height: 100vh !important;
@@ -50,7 +51,5 @@ export default {
   perspective: 900px;
   perspective-origin: 50% 50vh;
 }
-
-
 
 </style>

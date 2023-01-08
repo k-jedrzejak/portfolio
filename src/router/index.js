@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
 import NProgress from 'nprogress'
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: '.all',
-    component: HomeView
+    component: HomeView,
   },
   {
     path: '/about',
     name: '.about',
- 
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: AboutView,
   }
 ]
 
@@ -38,7 +38,6 @@ router.beforeEach(() => {
 })
 
 router.afterEach(() => {
-  window.scroll(0, 0)
   setTimeout(() => {
     NProgress.done()
     document.body.classList.remove(

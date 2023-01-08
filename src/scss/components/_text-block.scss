@@ -9,47 +9,10 @@
     hyphens: none;
     font-size: $font-l;
 
-        div {
+    div {
       margin-bottom: 1rem;
       &:last-child {
         margin-bottom: 0;
       }
-    }
-
-  
+    }  
 }
-
-
-
-
-  
-    // .subtitle {
-    //   color: var(--purple);
-    //   font-size: 4rem;
-    //   line-height: 1;
-    //   margin: 4rem -25vw 2rem 0;
-    //   padding-right: 1rem;
-    //   word-spacing: -1rem;
-    //   word-break: break-word;
-    //   hyphens: auto;
-  
-    //   s {
-    //     opacity: 0.4;
-    //     font-weight: 400;
-    //   }
-    // }
-  
-    // ul {
-    //   margin-bottom: 1rem;
-    //   &:last-child {
-    //     margin-bottom: 0;
-    //   }
-    // }
-    // li {
-    //   list-style-position: outside;
-    //   margin: 0 0 0.5rem 1rem;
-    //   &:last-child {
-    //     margin-bottom: 0;
-    //   }
-    // }
-//   }
