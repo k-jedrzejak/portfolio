@@ -19,12 +19,15 @@
             </button>
             <ul class="nav-items">
                 <li class="nav-item"
-                    v-for="(router, index) in this.links"
+                    v-for="(router, index) in this.routes"
                     :key="index">
-                    <a  :href="router.path"  
+                    <router-link  
+                        :to="{ name: router.name}"  
                         :title= router.name
-                        :id="`${router.name.replace('.','')}`"
-                        class="nav-link" >{{router.name}}</a>
+                        class="nav-link" 
+                        >{{router.name}}
+                        
+                    </router-link>
                 </li>
                 <li class="nav-item">
                     <a :href="`mailto:${data.email}`" 
@@ -57,7 +60,7 @@
         data() {
             return {
                 data: {},
-                links: router.options.routes,
+                routes: router.options.routes,
                 socialLinks: [
                     {
                         name: 'LinkedIn',
@@ -72,11 +75,7 @@
             }
         },
         async mounted() {
-            this.data = await fetchData()   
-            let activeRouterName = this.$router.currentRoute.value.name.replace('.','')
-            let activeNavItem = document.querySelector(`#${activeRouterName}`)
-            activeRouterName  === activeNavItem.id ? activeNavItem.classList.add('active') : ''
-            
+            this.data = await fetchData()     
         },
         methods: {
             openMenu() {

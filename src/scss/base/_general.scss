@@ -8,6 +8,9 @@ body {
     color: $color-white;
     background: $color-black;
     text-shadow: 0.03em 0.03em #0e1212, 0.01em -0.01em #0e1212, -0.01em 0.03em #0e1212, -0.02em -0.01em #0e1212;
+    &.load {
+        overflow: hidden;
+    }
 }
 
 a {

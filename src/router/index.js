@@ -1,10 +1,9 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
 import NProgress from 'nprogress'
 
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   linkExactActiveClass: "active",
   routes:  [
     {
@@ -15,7 +14,7 @@ const router = createRouter({
     {
       path: '/about',
       name: '.about',
-      component: AboutView,
+      component: () => import('../views/AboutView.vue'),
     }
   ]
 })
@@ -35,6 +34,7 @@ router.beforeEach(() => {
 })
 
 router.afterEach(() => {
+  window.scroll(0,0);
   setTimeout(() => {
     NProgress.done()
     document.body.classList.remove(
