@@ -21,7 +21,7 @@
                 <li class="nav-item"
                     v-for="(router, index) in this.links"
                     :key="index">
-                    <a  :href="$router.resolve({name: router.name}).href"  
+                    <a  :href="router.path"  
                         :title= router.name
                         :id="`${router.name.replace('.','')}`"
                         class="nav-link" >{{router.name}}</a>
@@ -50,14 +50,14 @@
   
 <script>
     import {fetchData} from '@/utils';
-    import {routes} from '../router/index';
+    import router from '../router/index';
 
     export default {
         name: 'NavSection',
         data() {
             return {
                 data: {},
-                links: routes,
+                links: router.options.routes,
                 socialLinks: [
                     {
                         name: 'LinkedIn',
@@ -75,7 +75,8 @@
             this.data = await fetchData()   
             let activeRouterName = this.$router.currentRoute.value.name.replace('.','')
             let activeNavItem = document.querySelector(`#${activeRouterName}`)
-            activeRouterName  === activeNavItem.id ? activeNavItem.classList.add('active') : ''; 
+            activeRouterName  === activeNavItem.id ? activeNavItem.classList.add('active') : ''
+            
         },
         methods: {
             openMenu() {
