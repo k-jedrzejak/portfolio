@@ -17,17 +17,17 @@ export default ({
 	},
     methods: {
         init() {
-			let timeline;
-			if (isProxy(this.timeline)){
-				timeline = toRaw(this.timeline);
-			}		
-
 			const head = document.querySelector('#astroMagento .head');
 			const astro = document.querySelector('#astroMagento .astro');
 			const handRight = document.querySelectorAll('#astroMagento .hand-right');
 			const handLeft = document.querySelector('#astroMagento .hand-left');
 			const twine = document.querySelector('#astroMagento .twine');
-
+			
+			let timeline;
+			if (isProxy(this.timeline)){
+				timeline = toRaw(this.timeline);
+			}
+				
 			handRight.forEach((item) => {
 			timeline.fromTo(item, {y: -8}, {
 				duration: 2, 

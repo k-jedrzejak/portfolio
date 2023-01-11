@@ -9,20 +9,24 @@
 
 <script>
 import TheToaster from '../toster/TheToaster.vue';
-import { toggleGsapAnimations} from '@/utils'
-import gsap from 'gsap';
-
-const timeline = gsap.timeline();
+import { setAnimation } from '../switchAnimation';
+import { isProxy, toRaw } from 'vue';
 
 export default({
   name: "ThePlanet",
   components: {TheToaster},
+  mixins: [setAnimation],
   props: {
       isPlaying: Boolean,
   },
   methods: {
     init() {
       const planet = document.querySelector('.planet');
+
+      let timeline;
+			if (isProxy(this.timeline)){
+				timeline = toRaw(this.timeline);
+			}
       
       timeline
       .from(planet, {
@@ -32,16 +36,7 @@ export default({
         repeat: -1
       })
     }
-  },
-  mounted() {
-    this.init();
-    toggleGsapAnimations(this.isPlaying, timeline);
-  },
-  watch: {
-    isPlaying() {
-      toggleGsapAnimations(this.isPlaying, timeline);
-    },
-  },
+  }
 })
 </script>
 
