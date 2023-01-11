@@ -5,16 +5,14 @@
 
 <script>
 import UfoRhinoSvg from './UfoRhinoSvg.vue';
-import {loopSineinOut} from '@/constants';
-import { toggleGsapAnimations} from '@/utils'
-import gsap from 'gsap';
-
-const timeline = gsap.timeline();
-
+import {loopSineinOut, loopBounce, loop} from '@/constants';
+import { character } from '../switchAnimation';
+import { isProxy, toRaw } from 'vue';
 
 export default ({
     name: 'UfoRhino',
     components: { UfoRhinoSvg },
+	mixins: [character],
 	props: {
       isPlaying: Boolean,
     },
@@ -30,102 +28,74 @@ export default ({
 		const btns = document.querySelectorAll('#ufoRhino .btn');
 		const grass = document.querySelectorAll('#ufoRhino .grass')
 
+		let timeline;
+		if (isProxy(this.timeline)){
+			timeline = toRaw(this.timeline);
+		}		
+
 		/* grass */
-		
 		grass.forEach((item) => {
 			timeline
-			.from(item, {
-				rotateZ: 4,
-				duration: 2,
+			.fromTo(item, {rotateZ: 4}, {
+				rotateZ: "random(-7, 3)",
+				duration: "random(1, 3)",
 				transformOrigin: "50% 50%",
-				...loopSineinOut
+				...loopSineinOut,
+				repeatRefresh: true
 			},0)
-			.to(item, {
-				rotateZ: -6,
-				duration: 2,
-				transformOrigin: "50% 50%",
-				...loopSineinOut
-			},1)
 		})
 
 		/* btns */	
-		btns.forEach((btn, index) => {
+		btns.forEach((btn) => {
 			timeline
-			.from(btn, {
+			.fromTo(btn, {opacity: 1},{
 				opacity:.4,
-				duration: index + 1,
-				delay: index + 1,
-				...loopSineinOut
-			},0)
-			.to(btn, {
-				opacity: 1,
-				duration: index + 1,
-				delay: index + 1,
-				...loopSineinOut
-			},0)
+				duration: 1,
+				...loopBounce
+			})
 		})
 
 		/* laser */	
 		lasers.forEach((laser) => {
 			timeline
-			.from(laser, {
-				opacity:.4,
-				duration: 1,
-				...loopSineinOut
-			},0)
-			.to(laser, {
-				opacity: 1,
-				duration: 3,
-				...loopSineinOut
+			.fromTo(laser, {opacity: 1}, {
+				opacity:"random(0.3, 1)",
+				duration: "random(0.3, 1.3)",
+				...loopSineinOut,
+				repeatRefresh: true,
 			},0)
 		})
 	
-	
 		/* clouds */	
-		
 		clouds.forEach((cloud, index) => {
 			if(index%2 == 0) {
 				timeline
-				.from(cloud, {
-					x: -30,
+				.fromTo(cloud,{x: 30}, {
+					x: "random(-30, 20)",
 					duration: index + 3 ,
-					...loopSineinOut
+					...loopSineinOut,
+					repeatRefresh: true,
 				},0)
-				.to(cloud, {
-					x: 30,
-					duration: index + 3 ,
-					...loopSineinOut
-				},1)
 			}
 			else{
 				timeline
-				.from(cloud, {
-					x: 30,
-					duration: index + 3 ,
-					...loopSineinOut
+				.fromTo(cloud, {x: -30}, {
+					x: "random(-20, 20)",
+					duration: "random(1, 3)" ,
+					...loopSineinOut,
+					repeatRefresh: true,
 				},0)
-				.to(cloud, {
-					x: -30,
-					duration: index + 3 ,
-					...loopSineinOut
-				},1)
 			}
 		});
 
-		
 		timeline
-
 		/* rhino  */
-			.from(rhino, {
-				y: -60,
+			.fromTo(rhino, {y: 10}, {
+				y: "random(-60, -30)",
 				duration: 3,
-				...loopSineinOut
+				...loopSineinOut,
+				repeatRefresh: true
 			},0)
-			.to(rhino, {
-				y: 10,
-				duration: 3,
-				...loopSineinOut
-			},1)
 
 		/* shadow  */	
 			.from(shadow, {
@@ -134,7 +104,7 @@ export default ({
 				scaleY: 0.5,
 				duration: 3,
 				repeatDelay: 0,
-				...loopSineinOut
+				...loop
 			},0)
 			.to(shadow, {
 				transformOrigin: '50% 50%',
@@ -142,24 +112,24 @@ export default ({
 				scaleY: 1,
 				duration: 3,
 				repeatDelay: 0,
-				...loopSineinOut
+				...loop
 			},1)
 			.from(shadow, {
 				rotateZ: -6,
 				duration: 2,
 				transformOrigin: '50% 50%',
 				repeatDelay: 3,
-				...loopSineinOut
+				...loop
 			},0)
 			.to(shadow, {
 				rotateZ: 2,
 				duration: 2,
 				transformOrigin: '50% 50%',
 				repeatDelay: 3,
-				...loopSineinOut
+				...loop
 			},0)
 		/* alien eye  */	
-			.from(eye, {
+			.from(eye,  {
 				scaleY: 1,
 				duration: .1,
 				repeatDelay: 0,
@@ -174,29 +144,16 @@ export default ({
 				...loopSineinOut
 			},1)
 		/* alien mouth  */
-			.from(mouth, {
-				scaleY: 1,
-				duration: 1,
-				transformOrigin: '4% 4%',
-				repeatDelay: 10,
-				...loopSineinOut
-			},0)
-			.to(mouth, {
+			.fromTo(mouth, {scaleY: 1}, {
 				scaleY: .1,
 				duration: 1,
 				transformOrigin: '4% 4%',
-				repeatDelay: 3,
+				repeatDelay: 4,
 				...loopSineinOut
 			},0)
 
 		/* ufo */
-			.from(ufo, {
-				rotateZ: 6,
-				duration: 2,
-				repeatDelay: 3,
-				...loopSineinOut
-			},0)
-			.to(ufo, {
+			.fromTo(ufo,{rotateZ: 6},{
 				rotateZ: -2,
 				duration: 2,
 				repeatDelay: 3,
@@ -204,15 +161,6 @@ export default ({
 			},0)
         }
     },
-	mounted() {
-		this.init();
-		toggleGsapAnimations(this.isPlaying, timeline);
-	},
-	watch: {
-		isPlaying() {
-		toggleGsapAnimations(this.isPlaying, timeline);
-		},
-	},
 });
 
 </script>

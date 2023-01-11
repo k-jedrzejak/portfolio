@@ -41,19 +41,18 @@ export default ({
 				y: "random(-110, 110)",
 				x: "random(-10, 100)",
 				rotateZ: 1,
-				duration: "random(1,4)",
+				duration: "random(1, 4)",
 				...loopSineinOut,
-
-				repeatRefresh:true
+				repeatRefresh: true
 			},0)
 			.fromTo(head, {x: -10, rotateZ: -3},{
 				x: 10,
 				rotateZ: 3,
 				repeatDelay: 3,
-				duration: "random(0.1,4)",
+				duration: "random(1, 4)",
 				transformOrigin: '50% 50%',
 				...loopSineinOut,
-				repeatRefresh:true,
+				repeatRefresh: true,
 			},0)
 			.fromTo(handLeft, {y: 5, rotateZ: 5},{
 				y: 1,
