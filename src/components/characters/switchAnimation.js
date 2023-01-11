@@ -1,6 +1,6 @@
 import gsap from 'gsap'
 
-export const character = {
+export const setAnimation = {
   props: {
     isPlaying: Boolean,
   },

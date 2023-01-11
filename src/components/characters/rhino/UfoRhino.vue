@@ -6,13 +6,13 @@
 <script>
 import UfoRhinoSvg from './UfoRhinoSvg.vue';
 import {loopSineinOut, loopBounce, loop} from '@/constants';
-import { character } from '../switchAnimation';
+import { setAnimation } from '../switchAnimation';
 import { isProxy, toRaw } from 'vue';
 
 export default ({
     name: 'UfoRhino',
     components: { UfoRhinoSvg },
-	mixins: [character],
+	mixins: [setAnimation],
 	props: {
       isPlaying: Boolean,
     },

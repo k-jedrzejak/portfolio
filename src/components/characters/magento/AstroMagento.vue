@@ -5,13 +5,13 @@
 <script>
 import AstroMagentoSvg from './AstroMagentoSvg.vue';
 import {loopSineinOut} from '@/constants'
-import { character } from '../switchAnimation';
+import { setAnimation } from '../switchAnimation';
 import { isProxy, toRaw } from 'vue';
 
 export default ({
     name: 'AstroMagento',
     components: { AstroMagentoSvg },
-	mixins: [character],
+	mixins: [setAnimation],
 	props: {
 		isPlaying: Boolean,
 	},
