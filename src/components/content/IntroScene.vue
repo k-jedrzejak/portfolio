@@ -19,7 +19,7 @@
         :initial="{ opacity: 0,  x: -80 }"
         :enter="{ opacity: 1,  x: 0,transition: {delay: 1700, duration: 800, ease: 'linear'} }">
         <div class="color">Karolina Jedrzejak</div>
-        <div class="gray">Frontend developer</div>
+        <div class="gray">Frontend Developer</div>
       </TextBlock>
 </SceneSection>
 </template>
@@ -35,7 +35,7 @@ export default {
 </script>
 
 
-<!-- <style lang="scss" scoped>
+<style lang="scss" scoped>
 .intro-container {
   padding: calc(50vh - 3.5rem) 0 0;
   margin: 0 25vw;
@@ -63,4 +63,4 @@ export default {
       display: flex;
     }
   }
-</style> -->
+</style>

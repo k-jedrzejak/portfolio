@@ -3,9 +3,13 @@
     div
     <div class="pic"></div>
     <div class="static-container">
-      <h1 class="title">about(<span class="params">karolina</span>)</h1>
+      <h1 class="title" v-motion
+        :initial="{ opacity: 0,  y: -80 }"
+        :enter="{ opacity: 1,  y: 0,transition: {delay: 500, duration: 800, ease: 'linear'} }">about(<span class="params color">karolina</span>)</h1>
 
-      <TextBlock>
+      <TextBlock v-motion
+        :initial="{ opacity: 0,  x: -80 }"
+        :enter="{ opacity: 1,  x: 0,transition: {delay: 1000, duration: 800, ease: 'linear'} }">
         <div class="first-fold">
           <ul class="about-contact">
             <li v-for="link in data.links" :key="link.url">
@@ -93,8 +97,7 @@ import TextBlock from '../components/TextBlock.vue';
 import GithubIcon from '@/components/icon/GithubIcon.vue';
 import LinkedInIcon from '@/components/icon/LinkedInIcon.vue';
 import { fetchData } from '@/utils';
-import { ref, onMounted, isProxy, toRaw } from 'vue';
-import gsap from 'gsap';
+import { ref, onMounted } from 'vue';
 
 export default {
   name: 'AboutView',
@@ -102,21 +105,10 @@ export default {
   data() {
     return {
       data: {},
-      introTimeline: null,
     }
   },
   async mounted() {
-    this.introTimeline = gsap.timeline();
-    let introTimeline;
-    if (isProxy(this.introTimeline)){
-      introTimeline = toRaw(this.introTimeline)
-    }
-    this.data = await fetchData();
-    this.playIntro(introTimeline);
-  },
-  beforeUnmount() {
-    this.introTimeline.kill();
-    this.introTimeline = null
+    this.data = await fetchData()
   },
   setup(){
     const about = ref();
@@ -128,25 +120,7 @@ export default {
     })
     return {about}
   },
-  methods: {
-    playIntro(timeline) {
-       timeline
-        .from('.title', {
-          autoAlpha: 0,
-          rotationX: 90,
-          transformOrigin: '50% 50% -100px',
-          duration: 2,
-          ease: "back.out(1.9)"
-        },0)
-        .from('.text', {
-            autoAlpha: 0,
-            x: -82,
-            duration: 2,
-            delay: 1,
-            ease: "expo.inOut",
-        },0)
-    }
-  }
+
 }
 </script>
 
@@ -222,7 +196,7 @@ export default {
         line-height: 2rem;
 
         &:hover {
-          background: $color-gray;
+          background: $color-magenta-dark;
         }
       }
 

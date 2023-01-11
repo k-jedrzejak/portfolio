@@ -5,99 +5,78 @@
 <script>
 import AstroMagentoSvg from './AstroMagentoSvg.vue';
 import {loopSineinOut} from '@/constants'
-import { toggleGsapAnimations} from '@/utils'
-import gsap from 'gsap';
-
-const timeline = gsap.timeline();
+import { character } from '../switchAnimation';
+import { isProxy, toRaw } from 'vue';
 
 export default ({
     name: 'AstroMagento',
     components: { AstroMagentoSvg },
+	mixins: [character],
 	props: {
 		isPlaying: Boolean,
 	},
     methods: {
         init() {
-        const head = document.querySelector('#astroMagento .head');
-		const astro = document.querySelector('#astroMagento .astro');
-		const handRight = document.querySelectorAll('#astroMagento .hand-right');
-		const handLeft = document.querySelector('#astroMagento .hand-left');
-		const twine = document.querySelector('#astroMagento .twine');
-		const magento = document.querySelector('#astroMagento .magento');
-	
+			let timeline;
+			if (isProxy(this.timeline)){
+				timeline = toRaw(this.timeline);
+			}		
 
-        handRight.forEach((item) => {
-			timeline.from(item, {
-					y: "20",
-					duration: 2,
-					repeatDelay: 4,
-					...loopSineinOut
-				},0)
-			})
-			
-			timeline
-			.from(astro, {
-				y: 45,
-				rotateZ: 1,
-				duration: 3,
+			const head = document.querySelector('#astroMagento .head');
+			const astro = document.querySelector('#astroMagento .astro');
+			const handRight = document.querySelectorAll('#astroMagento .hand-right');
+			const handLeft = document.querySelector('#astroMagento .hand-left');
+			const twine = document.querySelector('#astroMagento .twine');
+
+			handRight.forEach((item) => {
+			timeline.fromTo(item, {y: -8}, {
+				duration: 2, 
+				y: 10, 
+				repeatDelay: 4,
 				...loopSineinOut
+				}, 0)
+			})
+			timeline
+			.fromTo(astro, {y: -45, x: 0, rotateZ: -1}, {
+				y: "random(-110, 110)",
+				x: "random(-10, 100)",
+				rotateZ: 1,
+				duration: "random(1,4)",
+				...loopSineinOut,
+
+				repeatRefresh:true
 			},0)
-			.from(head,{
+			.fromTo(head, {x: -10, rotateZ: -3},{
 				x: 10,
 				rotateZ: 3,
-				repeatDelay: 2,
-				duration:3,
+				repeatDelay: 3,
+				duration: "random(0.1,4)",
 				transformOrigin: '50% 50%',
-				...loopSineinOut
+				...loopSineinOut,
+				repeatRefresh:true,
 			},0)
-			.from(handLeft,{
-					rotateZ: -5,
-					y: 2,
-					duration: 4,
-					repeatDelay: 3,
-					transformOrigin: '80% 10%',
-					...loopSineinOut
-					
+			.fromTo(handLeft, {y: 5, rotateZ: 5},{
+				y: 1,
+				rotateZ: -5,
+				duration: 4,
+				repeatDelay: 3,
+				transformOrigin: '80% 10%',
+				...loopSineinOut	
 			},0)
-			.from(twine,{
-					rotateZ: 20,
-					duration: 1,
-					transformOrigin: '80% 10%',
-					...loopSineinOut
-					
+			.fromTo(twine, {rotateZ: -20}, {
+				rotateZ: 20,
+				duration: 1,
+				transformOrigin: '80% 10%',
+				...loopSineinOut			
 			},0)
-			.from(twine,{
-					y:11,
-					duration: 4,
-					repeatDelay: 3,
-					...loopSineinOut	
-			},0)
-			.from(magento,{
-					rotateZ:2,
-					transformOrigin: '50% 100%',
-					duration: 4,
-					repeatDelay: 1,
-					...loopSineinOut
-					
-			},0)
-			.from(magento,{
-					rotateZ:-2,
-					duration: 4,
-					repeatDelay: 1,
-					...loopSineinOut
+			.fromTo(twine, {y: -11}, {
+				y:11,
+				duration: 4,
+				repeatDelay: 3,
+				...loopSineinOut	
 			},0)
         },
     },
-	mounted() {
-		this.init();
-			toggleGsapAnimations(this.isPlaying, timeline);
-		},
-		
-	watch: {
-		isPlaying() {
-			toggleGsapAnimations(this.isPlaying, timeline);
-		},
-	},
 });
 
 </script>
