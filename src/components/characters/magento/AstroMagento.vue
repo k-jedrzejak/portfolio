@@ -21,7 +21,6 @@ export default ({
 			const astro = document.querySelector('#astroMagento .astro');
 			const handRight = document.querySelectorAll('#astroMagento .hand-right');
 			const handLeft = document.querySelector('#astroMagento .hand-left');
-			const twine = document.querySelector('#astroMagento .twine');
 			
 			let timeline;
 			if (isProxy(this.timeline)){
@@ -61,12 +60,6 @@ export default ({
 				repeatDelay: 3,
 				transformOrigin: '80% 10%',
 				...loopSineinOut	
-			},0)
-			.fromTo(twine, {rotateZ: -20}, {
-				rotateZ: 20,
-				duration: 1,
-				transformOrigin: '80% 10%',
-				...loopSineinOut			
 			},0)
         },
     },
