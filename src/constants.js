@@ -22,3 +22,10 @@ export const loopBounce = {
   ...loop,
   ease: "bounce.inOut"
 }
+
+export const loopBackInOut = {
+  ...loop,
+  ease: "back.inOut(1.7)"
+}
+
+

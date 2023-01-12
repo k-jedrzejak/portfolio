@@ -78,8 +78,8 @@
   }
 
   #astroWork {
-    @include absolute(null, 3rem, 10rem, null);
-    @include size(250px);
+    @include absolute(null, 3rem, 5rem, null);
+    @include size(55vw, auto);
   }
 
 
@@ -91,7 +91,7 @@
     }
 
     #astroWork {
-      @include size(400px);
+      @include size(30vw, auto);
     }
   }
 

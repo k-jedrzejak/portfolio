@@ -4,7 +4,7 @@
 
 <script>
 import AstroWorkSvg from './AstroWorkSvg.vue';
-import {loop, loopBounce, loopSineinOut} from '@/constants'
+import {loop, loopBounce, loopSineinOut, loopBackInOut} from '@/constants'
 import { setAnimation } from '../switchAnimation';
 import { isProxy, toRaw } from 'vue';
 
@@ -16,13 +16,25 @@ export default ({
 	props: {
 		isPlaying: Boolean,
 	},
+	data() {
+		return { 
+			windowWidth: window.innerWidth,
+			windowHeight: window.innerHeight,
+			astroWidth: null,
+			astroHeight: null,
+		}
+	},
 	methods: {
 		init() {
-			const astro = document.querySelectorAll('#astroWork');
+
+			const astro = document.querySelector('#astroWork');
             const stars = document.querySelectorAll('#astroWork .star');
-			const hand = document.querySelectorAll('#astroWork #hand');
-			const head = document.querySelectorAll('#astroWork #head');
-			const light = document.querySelectorAll('#astroWork #light');
+			const hand = document.querySelector('#astroWork #hand');
+			const head = document.querySelector('#astroWork #head');
+			const light = document.querySelector('#astroWork #light');
+			this.astroWidth = astro.getBoundingClientRect().width;
+			this.astroHeight= astro.getBoundingClientRect().height;
+
 
 			let timeline;
 			if (isProxy(this.timeline)){
@@ -48,15 +60,6 @@ export default ({
 			});
 
 			timeline
-			.fromTo(astro, {x: 30, y: 45, rotate: -0}, {
-				x: "random(-900, 40)",
-				y:"random(-300,30)",
-				rotate: "random(-360, 360)",
-				duration: 13,
-				repeatDelay: 2,
-				...loopSineinOut,
-				repeatRefresh: true
-			}, 0)
 			/* hand  */	
 			.fromTo(hand, {rotateZ: 0, y: 2}, {
 				rotateZ: 12,
@@ -80,6 +83,32 @@ export default ({
 				...loopBounce,
 				repeatRefresh: true
 			},0)
+
+			const astroMove = (windowWidth, elementWidth, windowHeight, elementHeight) => {
+				timeline
+					.fromTo(astro, {x: 30, y: 45, rotate: -0}, {
+					x: `random(${-windowWidth + elementWidth}, 50)`,
+					y: `random(${-windowHeight + elementHeight}, 60)`,
+					rotate: "random([-360, -180, -30, 30, 180, 360])",
+					duration: 13,
+					...loopBackInOut,
+					repeatRefresh: true
+				}, 0)
+			}
+			astroMove(this.windowWidth, this.astroWidth, this.windowHeight, this.astroHeight)
+
+
+			window.addEventListener("resize", () => {
+				this.windowWidth = window.innerWidth;
+				this.windowWidth = window.innerHeight;
+				this.astroWidth = astro.getBoundingClientRect().width;
+				this.astroHeight = astro.getBoundingClientRect().height;
+				console.log(this.astroWidth);
+				console.log(this.astroHeight)
+
+				astroMove(this.windowWidth, this.astroWidth, this.windowHeight, this.astroHeight)
+			});
+
 		}
 	}
 })
