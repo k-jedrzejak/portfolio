@@ -176,16 +176,16 @@ export default ({
 					scaleY: 1,
 					transformOrigin: '50% 50%',
 					repeat: -1,
-					duration: 3,
+					duration: 2,
 					repeatDelay: .2,
 				},0)
 				.fromTo(eye, {scaleY: .1},{
 					scaleY: 1,
 					transformOrigin: '50% 50%',
 					repeat: -1,
-					delay: 3,
+					delay: 2,
 					duration: .2,
-					repeatDelay: 3,
+					repeatDelay: 2,
 				},1)
 			})
 			breadEyesPupils.forEach((pupil) => {
