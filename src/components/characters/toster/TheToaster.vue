@@ -98,16 +98,19 @@ export default ({
 			}, 0)
 
 			/* toaster eyes */	
-			.from(tosterEyes, {
-				scaleY: 0.1,
-				transformOrigin: '50% 50%',
-				repeat: -1,
-				repeatDelay: 2,
-			},0)
-			.to(tosterEyes, {
+			.fromTo(tosterEyes, {scaleY: 1},{
 				scaleY: 1,
 				transformOrigin: '50% 50%',
 				repeat: -1,
+				duration: 2,
+				repeatDelay: .2,
+			},0)
+			.fromTo(tosterEyes, {scaleY: .1},{
+				scaleY: 1,
+				transformOrigin: '50% 50%',
+				repeat: -1,
+				delay: 2,
+				duration: .2,
 				repeatDelay: 2,
 			},1)
 
@@ -169,17 +172,20 @@ export default ({
 			/* bread eyes */
 			breadEyes.forEach((eye) => {
 				timeline
-				.from(eye, {
-				scaleY: 0.1,
-				repeat: -1,
-				repeatDelay: 6,
-				transformOrigin: '50% 50%',
-				},0)
-				.to(eye, {
+				.fromTo(eye, {scaleY: 1},{
 					scaleY: 1,
-					repeat: -1,
-					repeatDelay: 6,
 					transformOrigin: '50% 50%',
+					repeat: -1,
+					duration: 3,
+					repeatDelay: .2,
+				},0)
+				.fromTo(eye, {scaleY: .1},{
+					scaleY: 1,
+					transformOrigin: '50% 50%',
+					repeat: -1,
+					delay: 3,
+					duration: .2,
+					repeatDelay: 3,
 				},1)
 			})
 			breadEyesPupils.forEach((pupil) => {

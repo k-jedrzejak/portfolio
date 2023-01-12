@@ -129,19 +129,20 @@ export default ({
 				...loop
 			},0)
 		/* alien eye  */	
-			.from(eye,  {
+			.fromTo(eye, {scaleY: 1},{
 				scaleY: 1,
-				duration: .1,
-				repeatDelay: 0,
 				transformOrigin: '50% 50%',
-				...loopSineinOut
+				repeat: -1,
+				duration: 2,
+				repeatDelay: .2,
 			},0)
-			.to(eye, {
-				scaleY: .1,
-				duration: .2,
-				repeatDelay: 3,
+			.fromTo(eye, {scaleY: .1},{
+				scaleY: 1,
 				transformOrigin: '50% 50%',
-				...loopSineinOut
+				repeat: -1,
+				delay: 2,
+				duration: .2,
+				repeatDelay: 2,
 			},1)
 		/* alien mouth  */
 			.fromTo(mouth, {scaleY: 1}, {
