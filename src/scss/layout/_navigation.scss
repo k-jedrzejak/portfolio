@@ -70,7 +70,7 @@
     @include size(1rem, 3rem);
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    padding: $indent-xs;
+    padding: $indent-xs 0;
     background: none;
     border: 0;
 

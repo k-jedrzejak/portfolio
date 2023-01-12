@@ -183,7 +183,7 @@ export default {
       gsap.timeline({
           scrollTrigger: {
             trigger: "#adrino2",
-            start: "top 50%",
+            start: "top 5%",
             end: "+=800",
             scrub: 1,
             pin: false,
@@ -268,8 +268,8 @@ export default {
       gsap.timeline({
           scrollTrigger: {
             trigger: "#aurora3",
-            start: "top 40%",
-            end: "+=600",
+            start: "top 5%",
+            end: "+=900",
             scrub: 1,
             pin: false,
             onLeave: () => this.isPlaying.AstroMagento = false,
@@ -289,7 +289,7 @@ export default {
       gsap.timeline({
           scrollTrigger: {
             trigger: "#euroTitle",
-            start: "top 30%",
+            start: "top 50%",
             end: "+=600",
             scrub: 1,
             pin: false,
@@ -417,7 +417,7 @@ export default {
           scrollTrigger: {
             trigger: "#praca3",
             start: "top top",
-            end: "+=10",
+            end: "+=1",
             scrub: 1,
             pin: false,
             onLeave: () => this.isPlaying.AstroWork = false,
@@ -467,41 +467,4 @@ export default {
   position: relative;
 }
 
-#home {
-  .text {
-    font-size: 1.2rem;
-
-    .big {
-      display: block;
-      font-size: 4rem;
-      font-weight: 700;
-      word-spacing: -0.1em;
-      letter-spacing: -0.05em;
-      width: 70vw;
-
-      @media screen and (max-width: 1024px) {
-        font-size: 3.5rem;
-        width: 90vw;
-      }
-
-      @media screen and (max-width: 768px) {
-        width: 100%;
-      }
-
-      @media screen and (max-width: 568px) {
-        font-size: 2rem;
-      }
-    }
-
-    @media screen and (max-width: 568px) {
-      font-size: 1rem;
-    }
-  }
-
-  @media screen and (max-width: 568px) {
-    .title {
-      white-space: nowrap;
-    }
-  }
-}
 </style>

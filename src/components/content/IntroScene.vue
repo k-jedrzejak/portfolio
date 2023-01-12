@@ -36,31 +36,9 @@ export default {
 
 
 <style lang="scss" scoped>
-.intro-container {
-  padding: calc(50vh - 3.5rem) 0 0;
-  margin: 0 25vw;
-  min-height: 100vh;
-  perspective: 900px;
-  perspective-origin: 50% 50vh;
-
-  .text {
-    .color {
-      margin-bottom: $indent-s;
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    margin: 0 4rem 0 calc(4rem + 1px);
-  }
-
-  @media screen and (max-width: 568px) {
-    margin: 0 2rem 0 calc(2rem + 1px);
-  }
+.title {
+  margin-bottom: 1rem;
+  display: flex ;
 }
 
-.scene-intro {
-    .title {
-      display: flex;
-    }
-  }
 </style>

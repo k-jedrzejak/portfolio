@@ -21,9 +21,9 @@ $font-family-base: 'Source Code Pro', monospace;
 
 $font-s: calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)));
 $font-m: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
-$font-l: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
+$font-l: calc(18px + (22 - 18) * ((100vw - 300px) / (1600 - 300)));
 $font-xl: calc(32px + (36 - 32) * ((100vw - 300px) / (1600 - 300)));
-$font-xxl: calc(42px + (64 - 42) * ((100vw - 300px) / (1600 - 300)));
+$font-xxl: calc(34px + (64 - 34) * ((100vw - 300px) / (1600 - 300)));
 
 $font-menu-mobile:  $font-xl;
 $font-menu-desktop: $font-m;

@@ -100,7 +100,7 @@ export default ({
 
 			window.addEventListener("resize", () => {
 				this.windowWidth = window.innerWidth;
-				this.windowWidth = window.innerHeight;
+				this.windowHeight = window.innerHeight;
 				this.astroWidth = astro.getBoundingClientRect().width;
 				this.astroHeight = astro.getBoundingClientRect().height;
 				astroMove(this.windowWidth, this.astroWidth, this.windowHeight, this.astroHeight)

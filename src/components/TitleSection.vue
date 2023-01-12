@@ -41,16 +41,12 @@ export default {
     padding-right: 0;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: $screen-desktop) {
     padding-left: 4rem;
   }
 
-  @media screen and (max-width: 568px) {
+  @media screen and (max-width: $screen-mobile) {
     padding: 0 1rem 0 2rem;
-
-    .title {
-      margin-bottom: 1rem;
-    }
   }
 }
 </style>

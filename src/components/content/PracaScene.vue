@@ -72,7 +72,7 @@
 
   <style lang="scss">
   #pracaLogo {
-    @include absolute(15%, null, null, 20%);
+    @include absolute(15%, null, null, 10%);
     @include size(70vw);
     z-index: 10;
   }
@@ -87,7 +87,7 @@
   @media screen and (min-width: $screen-tablet) {
     #pracaLogo {
       @include size(40vw);
-      @include absolute(20%, null, null, 30%);
+      @include absolute(20%, null, null, 10%);
     }
 
     #astroWork {
@@ -99,7 +99,7 @@
   @media screen and (min-width: $screen-desktop) {
     #pracaLogo {
       @include size(30vw);
-      @include absolute(20%, null, null, 40%);
+      @include absolute(20%, null, null, 25%);
     }
     #astroWork {
       @include absolute(null, 8rem, 3rem, null);

@@ -31,12 +31,12 @@ export default {
   perspective: 900px;
   perspective-origin: 50% 50vh;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: $screen-desktop) {
     margin: 0 4rem 0 calc(4rem + 1px);
   }
 
-  @media screen and (max-width: 568px) {
-    margin: 0 2rem 0 calc(2rem + 1px);
+  @media screen and (max-width: $screen-mobile) {
+    margin: 0 1rem 0 calc(2rem + 1px);
   }
 }
 
