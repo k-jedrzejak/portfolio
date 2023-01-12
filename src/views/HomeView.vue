@@ -341,7 +341,7 @@ export default {
           scrollTrigger: {
             trigger: "#euro3",
             start: "top 95%",
-            end: "+=3000",
+            end: "+=2000",
             scrub: 1,
             pin: false,
             onLeave: () => this.isPlaying.ToasterPlanet = false,
