@@ -68,12 +68,6 @@ export default ({
 				transformOrigin: '80% 10%',
 				...loopSineinOut			
 			},0)
-			.fromTo(twine, {y: -11}, {
-				y:11,
-				duration: 4,
-				repeatDelay: 3,
-				...loopSineinOut	
-			},0)
         },
     },
 });
