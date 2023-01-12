@@ -103,9 +103,6 @@ export default ({
 				this.windowWidth = window.innerHeight;
 				this.astroWidth = astro.getBoundingClientRect().width;
 				this.astroHeight = astro.getBoundingClientRect().height;
-				console.log(this.astroWidth);
-				console.log(this.astroHeight)
-
 				astroMove(this.windowWidth, this.astroWidth, this.windowHeight, this.astroHeight)
 			});
 
