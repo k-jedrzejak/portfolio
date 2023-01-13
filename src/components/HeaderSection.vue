@@ -10,6 +10,7 @@
 <script>
 
 import NavSection from '@/components/NavSection.vue';
+import { removeBodyClass, addBodyClass} from '@/utils';
 
 export default {
   name: 'HeaderSection',
@@ -22,10 +23,10 @@ export default {
   },
     methods: {
     openMenu() {
-      document.body.classList.add('is-nav-open')
+      addBodyClass('is-nav-open')
     },
     closeMenu() {
-      document.body.classList.remove('is-nav-open')
+      removeBodyClass('is-nav-open')
     },
   }
 }

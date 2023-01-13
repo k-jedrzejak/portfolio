@@ -1,6 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import NProgress from 'nprogress'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import NProgress from 'nprogress';
+import { removeBodyClass, addBodyClass} from '@/utils';
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -29,7 +30,7 @@ NProgress.configure({
 })
 
 router.beforeEach(() => {
-  document.body.classList.add('load')
+  addBodyClass('load')
   NProgress.start()
 })
 
@@ -37,7 +38,7 @@ router.afterEach(() => {
   window.scroll(0,0);
   setTimeout(() => {
     NProgress.done()
-    document.body.classList.remove(
+    removeBodyClass(
       'load',
       'is-nav-open'
     )

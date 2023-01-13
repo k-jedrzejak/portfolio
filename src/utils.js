@@ -9,19 +9,10 @@ export async function fetchData() {
   }
 }
 
-// returns a random integer between the min/max
-export function random(min, max) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
+export function removeBodyClass(...classes) {
+  document.body.classList.remove(...classes)
 }
 
-
-// switch animation
-export function toggleGsapAnimations(isPlaying, timeline) {
-  if (isPlaying) {
-    timeline.play();
-  } else {
-    timeline.pause();
-  }
+export function addBodyClass(...classes) {
+    document.body.classList.add(...classes)
 }

@@ -19,6 +19,7 @@ import EuroScene from '@/components/content/EuroScene.vue';
 import PracaScene from '@/components/content/PracaScene.vue';
 import ExpScene from '@/components/content/ExpScene.vue';
 import { ref, onMounted } from 'vue';
+import { removeBodyClass, addBodyClass} from '@/utils';
 
 export default {
   name: 'HomeView',
@@ -445,8 +446,8 @@ export default {
     const home = ref();
     onMounted(() => {
       if (home.value) {
-        document.body.classList.remove("about")
-        document.body.classList.add("home")
+        removeBodyClass("about");
+        addBodyClass("home");
       }
     })
 

@@ -96,7 +96,7 @@
 import TextBlock from '../components/TextBlock.vue';
 import GithubIcon from '@/components/icon/GithubIcon.vue';
 import LinkedInIcon from '@/components/icon/LinkedInIcon.vue';
-import { fetchData } from '@/utils';
+import { fetchData, removeBodyClass, addBodyClass} from '@/utils';
 import { ref, onMounted } from 'vue';
 
 export default {
@@ -114,8 +114,8 @@ export default {
     const about = ref();
     onMounted(() => {
       if(about.value) {
-        document.body.classList.remove("home")
-        document.body.classList.add("about")
+        removeBodyClass("home");
+        addBodyClass("about");
       }
     })
     return {about}
