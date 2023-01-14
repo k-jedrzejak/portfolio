@@ -14,5 +14,5 @@ export function removeBodyClass(...classes) {
 }
 
 export function addBodyClass(...classes) {
-    document.body.classList.add(...classes)
+  document.body.classList.add(...classes)
 }

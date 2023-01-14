@@ -89,6 +89,7 @@
         </div>
       </TextBlock>
     </div>
+    <SpineLine />
   </div>
 </template>
 
@@ -96,12 +97,13 @@
 import TextBlock from '../components/TextBlock.vue';
 import GithubIcon from '@/components/icon/GithubIcon.vue';
 import LinkedInIcon from '@/components/icon/LinkedInIcon.vue';
+import SpineLine from '@/components/SpineLine.vue';
 import { fetchData, removeBodyClass, addBodyClass} from '@/utils';
 import { ref, onMounted } from 'vue';
 
 export default {
   name: 'AboutView',
-  components: { TextBlock, GithubIcon,LinkedInIcon },
+  components: { TextBlock, GithubIcon, LinkedInIcon, SpineLine },
   data() {
     return {
       data: {},
@@ -126,7 +128,8 @@ export default {
 
 <style lang="scss" scoped>
 
-// Common
+$myImgPath: '../assets/me9.jpg';
+
 .page-about {
   .header-bg {
     opacity: 0;
@@ -142,11 +145,8 @@ export default {
     pointer-events: none;
     display: block;
     z-index: 0;
-    aspect-ratio: 1/1;
-    background-image: url(../assets/me9.jpg);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    aspect-ratio: 1;
+    @include bg-image($myImgPath, contain, right );
     border-radius: 50%;
 
     @media screen and (min-width: $screen-desktop) {
@@ -158,17 +158,14 @@ export default {
       opacity: 1;
     }
   }
-
   .static-container {
     padding-top: 30vh;
     @media screen and (min-width: $screen-desktop) {
-    .static-container {
-      padding-top: 30vh;
-    
+      .static-container {
+        padding-top: 30vh;
+      }   
+    }
   }
-}
-  }
-
   .about-contact {
     @include flex();
     list-style: none;
@@ -186,7 +183,6 @@ export default {
       @include flex();
       flex: 0 0 auto;
       text-decoration: none;
-
       &.cv {
         background: $color-primary;
         @include size(auto, 2rem);
@@ -219,18 +215,20 @@ export default {
     @media screen and (max-width: $screen-mobile) {
       flex-flow: row wrap;
 
-      li:last-child {
-        flex: 0 0 100%;
-        margin: 1rem 0 0;
+      li {
+        &:last-child {
+          flex: 0 0 100%;
+          margin: 1rem 0 0;
+        }
       }
     }
   }
 
   .about-grid {
+    @include size(65vw);
     padding: 3rem 0 0 0;
     margin-right: -25vw;
-    width: 65vw;
-
+  
     h2 {
       font-size: 1.2rem;
       margin-bottom: 1rem;
@@ -254,8 +252,7 @@ export default {
       line-height: 1.5em;
       color: $color-gray;
     }
-
-    .tools {
+   .tools {
       display: grid;
       grid-template: 1fr / repeat(4, 1fr);
       grid-gap: 2rem;
@@ -267,9 +264,9 @@ export default {
     }
 
     @media screen and (max-width: $screen-desktop) {
+      @include size(calc(100vw - 4rem));
       padding: 3rem 1rem 0 0;
       margin: 0;
-      width: calc(100vw - 4rem);
     }
 
     @media screen and (max-width: $screen-tablet) {
@@ -303,5 +300,4 @@ export default {
     }
   }
 }
-
 </style>

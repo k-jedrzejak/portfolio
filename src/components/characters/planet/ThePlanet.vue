@@ -40,9 +40,8 @@ export default({
 })
 </script>
 
-
 <style lang="scss" scoped>
 .planet {
   @include bg-image("./planet.png");
-  }
+}
 </style>

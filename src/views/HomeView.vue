@@ -6,6 +6,7 @@
     <AuroraScene :isPlaying="isPlaying.AstroMagento"/>
     <EuroScene :isPlaying="isPlaying.ToasterPlanet"/>
     <PracaScene :isPlaying="isPlaying.AstroWork"/>
+    <SpineLine />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import PracaScene from '@/components/content/PracaScene.vue';
 import ExpScene from '@/components/content/ExpScene.vue';
 import { ref, onMounted } from 'vue';
 import { removeBodyClass, addBodyClass} from '@/utils';
+import SpineLine from '@/components/SpineLine.vue';
 
 export default {
   name: 'HomeView',
@@ -30,7 +32,7 @@ export default {
     EuroScene,
     PracaScene,
     ExpScene,
- 
+    SpineLine
   },
   data() {
     return {

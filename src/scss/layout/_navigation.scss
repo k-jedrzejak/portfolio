@@ -9,7 +9,7 @@
     padding: 8rem 1rem 4rem;
     text-align: right;
     font-size: $font-menu-mobile;
-    transform: translate3d(110%,0,0);
+    transform: translate3d(110%, 0, 0);
     @include transition(0.5s);
 
     .nav-items {
@@ -19,18 +19,22 @@
             @include transition;
 
             .nav-link {
-                color: $color-white;
+                color: $color-gray;
 
                 &.active {
-                    color: $color-gray;
-                }         
-            }
-           
-            &:hover {
-                color: $color-primary;
+                    color: $color-white;
+
+                    &:hover {
+                        color: $color-white;
+                    }
+                }
+
+                &:hover {
+                    color: $color-primary;
+                }
             }
         }
-        
+
         .social-item {
             display: inline-block;
 
@@ -39,19 +43,18 @@
             }
 
             .social-link {
-   
+
                 svg {
                     display: block;
-                    // @include relative(2px);
                     @include size(1.2rem, 1.2rem);
-                    @include transition();
 
                     path {
+                        @include transition();
                         fill: $color-primary;
                     }
-            
+
                 }
-            
+
                 &:hover {
                     svg {
                         path {
@@ -80,7 +83,7 @@
         @include size(0.25rem, 0.25rem);
         border-radius: 0.25rem;
         background: $color-primary;
-        transition: all .4s cubic-bezier(.19,1,.22,1);
+        transition: all .4s cubic-bezier(.19, 1, .22, 1);
     }
 }
 
@@ -93,16 +96,19 @@
 
 .is-nav-open {
     overflow: hidden;
-    .container {
+
+    .container,
+    .footer,
+    .spine {
         opacity: 0.1;
-      }
-  
-      .header-nav-button {
+    }
+
+    .header-nav-button {
         opacity: 0;
-      }
+    }
 
     .nav {
-        transition: transform 1s cubic-bezier(.86,0,.07,1);
+        transition: transform 1s cubic-bezier(.86, 0, .07, 1);
         transform: translateZ(0);
     }
 }
@@ -138,13 +144,7 @@
         display: none;
     }
 
-    .is-nav-open { 
+    .is-nav-open {
         overflow: auto;
-
-        .container {
-            opacity: 1;
-            
-          }
     }
-
 }

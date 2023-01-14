@@ -11,9 +11,10 @@
         <path id="Layer" class="s1" d="m71.5 21.8q0.8 0.3 1.3 0.9 0.6 0.6 0.9 1.3 0.3 0.7 0.3 1.5c0 1.6-1 3.1-2.5 3.7-1.5 0.6-3.2 0.3-4.3-0.8-1.2-1.2-1.5-2.9-0.9-4.4 0.6-1.5 2.1-2.5 3.7-2.5q0.8 0 1.5 0.3z"/>
         </svg>
 </template>
+
 <script>
   export default{
-  name: "PracaSvg"
+   name: "PracaSvg"
   }
 </script>
 

@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import AcSvg from './AcSvg.vue'
 
 export default {

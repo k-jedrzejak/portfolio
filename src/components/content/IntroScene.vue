@@ -21,7 +21,7 @@
         <div class="color">Karolina Jedrzejak</div>
         <div class="gray">Frontend Developer</div>
       </TextBlock>
-</SceneSection>
+  </SceneSection>
 </template>
 
 <script>
@@ -33,7 +33,6 @@ export default {
   components: { TextBlock, SceneSection},
 }
 </script>
-
 
 <style lang="scss" scoped>
 .title {

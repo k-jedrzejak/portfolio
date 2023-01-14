@@ -2,21 +2,16 @@
   <section>
     <TitleSection id="exp">
       <TitleFunction selectorClass="experience" subtitle="// WorkShowcase"></TitleFunction>
-  
     </TitleSection>
     <div id="clouds">
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-  </div>
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+    </div>
   </section>
-
-
-
-
 </template>
-  
-  <script>
+
+<script>
 import TitleSection from '../TitleSection.vue'
 import TitleFunction from '../TitleFunction.vue';
   
@@ -24,36 +19,31 @@ import TitleFunction from '../TitleFunction.vue';
     name: 'ExpScene',
     components: { TitleSection, TitleFunction },
   }
-  </script>
+</script>
   
   
- <style lang="scss">
+<style lang="scss" scoped>
+
+$cloud1Path: '../../assets/clouds-1.png';
+$cloud2Path: '../../assets/clouds-2.png';
+$cloud3Path: '../../assets/clouds-3.png';
 
 #clouds {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  @include fixed(0,0,0,0);
   visibility: hidden;
 }
 .cloud{
-    position: absolute;
-    width: 120vw;
-    height: 120vh;
-    transform-origin: 50% 50%;
-    background: url('../../assets/clouds-1.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.6;
-
+  @include absolute;
+  @include size(120vw, 120vh);
+  transform-origin: 50% 50%;
+  @include bg-image($cloud1Path, contain, center);
+  opacity: 0.6;
     &.cloud-2 {
-      background-image: url('../../assets/clouds-2.png');
+      @include bg-image($cloud2Path, contain, center);
     }
-
     &.cloud-3 {
-      background-image: url('../../assets/clouds-3.png');
-      width: 100vw;
-      height: 100vh;
+      @include bg-image($cloud3Path, contain, center);
+      @include size(100vw, 100vh);
       z-index: -1;
       opacity: 0.25;
     }

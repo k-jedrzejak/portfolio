@@ -21,21 +21,16 @@ export default {
   min-height: 100vh;
 }
 .title-container {
-  position: fixed;
-  top: 0;
-  left: 0;
+  @include size(100vw, 100vh);
+  @include fixed(0, $left:0);
+  @include flex(flex-start, center);
+  flex-flow: column nowrap;
   z-index: 0;
-  width: 100vw;
-  height: 100vh;
   visibility: hidden;
   perspective: 900px;
   perspective-origin: 50% 50vh;
   padding: 0 1rem 0 25vw;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: center;
-
+  
   .title {
     margin-right: 0;
     padding-right: 0;

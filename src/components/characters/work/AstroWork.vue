@@ -26,7 +26,6 @@ export default ({
 	},
 	methods: {
 		init() {
-
 			const astro = document.querySelector('#astroWork');
             const stars = document.querySelectorAll('#astroWork .star');
 			const hand = document.querySelector('#astroWork #hand');
@@ -35,13 +34,11 @@ export default ({
 			this.astroWidth = astro.getBoundingClientRect().width;
 			this.astroHeight= astro.getBoundingClientRect().height;
 
-
 			let timeline;
 			if (isProxy(this.timeline)){
 				timeline = toRaw(this.timeline);
 			}
 				
-
 			/* stars */	
             stars.forEach((star) => {
 				timeline

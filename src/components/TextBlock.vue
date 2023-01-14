@@ -5,8 +5,3 @@
 <script>
 export default { name: 'TextBlock' }
 </script>
-
-<style lang="scss">
-
-  
-</style>

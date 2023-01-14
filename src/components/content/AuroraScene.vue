@@ -70,7 +70,8 @@ export default {
 }
 </script>
 
-<style lang="scss">#acLogo {
+<style lang="scss">
+#acLogo {
   @include size(90vw, 90vw);
   @include absolute(10%, null, null, -9vh);
   z-index: 10;

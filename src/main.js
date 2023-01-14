@@ -8,7 +8,6 @@ import { MotionPlugin } from '@vueuse/motion'
 import gsap from 'gsap'
 
 
-
 library.add(faLinkedin, faGithub);
 createApp(App)
     .use(router)

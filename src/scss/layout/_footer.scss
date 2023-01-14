@@ -1,0 +1,18 @@
+//
+// Common
+//------------------------------------------
+
+.footer {
+    font-size: $font-s;
+    text-align: center;
+    padding: $indent-m;
+    @include flex(center,center);
+    background: $color-black;
+    @include transition;
+    @include relative;
+    
+    .footer-icon {
+      padding: 0 $indent-base;
+      box-sizing: content-box;
+    }
+  }

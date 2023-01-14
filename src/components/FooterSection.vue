@@ -33,17 +33,5 @@ export default {
 </script>
 
 <style lang="scss">
-.footer {
-  font-size: $font-s;
-  text-align: center;
-  padding: $indent-m;
-  @include flex(center,center);
-  background: $color-black;
-
-position:relative;
-  .footer-icon {
-    padding: 0 $indent-base;
-    box-sizing: content-box;
-  }
-}
+  @import '@/scss/layout/_footer.scss';
 </style>

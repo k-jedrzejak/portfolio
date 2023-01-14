@@ -41,9 +41,9 @@
         </TextBlock>
       </SceneSection>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
   import TitleSection from '../TitleSection.vue'
   import TitleFunction from '../TitleFunction.vue'
   import TextBlock from '../TextBlock.vue'
@@ -51,8 +51,6 @@
   import PracaLogo from '../logotypes/Praca/PracaLogo.vue'
   import AstroWork from '../characters/work/AstroWork.vue'
 
-  
-  
   export default {
     name: 'AuroraScene',
     components: {
@@ -70,7 +68,7 @@
   </script>
   
 
-  <style lang="scss">
+<style lang="scss">
   #pracaLogo {
     @include absolute(15%, null, null, 10%);
     @include size(70vw);
