@@ -2,7 +2,9 @@
   <HeaderSection/>
   <router-view :key="$route.fullPath"></router-view>
   <FooterSection />
-  <FlyUnicorn />
+  <div class="unicorn-container">
+    <FlyUnicorn />
+  </div>
 </template>
 
 <script>
@@ -36,6 +38,12 @@ export default {
 #app {
   overflow: hidden;
   margin: 0 auto;
+}
+
+.unicorn-container {
+  @include size(100%, 100%);
+  @include absolute(0,0,0,0);
+  overflow: hidden;
 }
 
 .container {
