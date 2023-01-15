@@ -32,7 +32,7 @@ export default {
     EuroScene,
     PracaScene,
     ExpScene,
-    SpineLine
+    SpineLine,
   },
   data() {
     return {

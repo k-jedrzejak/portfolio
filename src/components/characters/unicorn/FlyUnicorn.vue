@@ -1,35 +1,99 @@
 
 <template>
-    <FlyUnicornSvg />
+    <FlyUnicornSvg class="unicorn"/>
 </template>
 
 <script>
 import FlyUnicornSvg from './FlyUnicornSvg.vue';
 import gsap from 'gsap';
-let randomNumber = Math.floor( Math.random(100, window.innerWidth));
 
 export default ({
     name: 'FlyUnicorn',
     components: { FlyUnicornSvg },
+    data() {
+        return {
+            unicorn: null,
+        }
+    },
     methods: {
-        init() {
-            const tl = gsap.timeline();
-            tl
-            .to("#unicorn", {
-                x: `${randomNumber}`,
-  y: "random(-15, 35)",
-  ease: "power1.inOut",
-  duration: 3, 
-  repeatDelay: 10,
-  repeat: -1,
-  repeatRefresh: true
-  });
+        init(element) {
+          let pxPerSecond = 50;
+
+          function moveUnicorn(element) {
+            let newPos = {
+              x:gsap.utils.random(-window.innerWidth, window.innerWidth * 2),
+              y:gsap.utils.random(-window.innerHeight, window.innerHeight * 2)
+            }
+            let curPos = {
+              x:gsap.getProperty(element, "x"),
+              y:gsap.getProperty(element, "y")
+            }
+
+            let deltaX = curPos.x - newPos.x
+            let deltaY = curPos.y - newPos.y
+            let distance = Math.hypot(deltaX, deltaY)
+            let duration = distance / pxPerSecond
+
+            gsap.to(element, {
+              x: newPos.x, 
+              y: newPos.y, 
+              duration: duration, 
+              ease:"none",
+               onComplete: moveUnicorn, 
+               onCompleteParams:[element]
+            }) 
+
+            curPos.x > newPos.x ? 
+            gsap.to(element,{scaleX: 1, duration: 0}) : 
+            gsap.to(element,{scaleX: -1, duration: 0});
+          }
+            moveUnicorn(element);
+        },
+
+        doubleTapUnicorn(element) {
+          let lastClick = 0;
+          element.addEventListener('touchstart', (event) => {
+            let date = new Date();
+            let time = date.getTime();
+            
+            const time_between_taps = 200; 
+            event.preventDefault(); 
+            
+            if (time - lastClick < time_between_taps) {
+              // to do
+            }
+            lastClick = time;
+          })
+        },
+
+        doubleClickUnicorn(element) {
+          element.addEventListener('dblclick', () => {
+             // to do
+          })
 
         }
     },
+    
     mounted() {
-        this.init();
+      this.unicorn = document.querySelector('.unicorn');
+      this.init(this.unicorn);
+      this.doubleTapUnicorn(this.unicorn);
+      this.doubleClickUnicorn(this.unicorn);
     }
 });
 
 </script>
+
+<style lang="scss" scoped>
+
+#unicorn {
+  @include size(20vw, auto);
+  @include absolute(0, null, null, -10%);
+  z-index: 2000;
+
+    @media screen and (min-width: $screen-desktop) {
+      @include size(10vw, auto); 
+    }
+}
+</style>
+

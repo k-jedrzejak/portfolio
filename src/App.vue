@@ -2,21 +2,21 @@
   <HeaderSection/>
   <router-view :key="$route.fullPath"></router-view>
   <FooterSection />
+  <FlyUnicorn />
 </template>
 
 <script>
     import 'animate.css';
     import HeaderSection from '@/components/HeaderSection.vue'
     import FooterSection from '@/components/FooterSection.vue'
-    // import SpineLine from './components/SpineLine.vue'
-
+    import FlyUnicorn from './components/characters/unicorn/FlyUnicorn.vue';
 
 export default {
   name: 'App',
   components: {
     HeaderSection,
     FooterSection,
-    // SpineLine
+    FlyUnicorn
   },
   methods: {
     scrollTop() {
