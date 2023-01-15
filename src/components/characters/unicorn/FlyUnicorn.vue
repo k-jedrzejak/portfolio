@@ -21,8 +21,8 @@ export default ({
 
           function moveUnicorn(element) {
             let newPos = {
-              x:gsap.utils.random(-window.innerWidth / 2, window.innerWidth * 1.5),
-              y:gsap.utils.random(-window.innerHeight / 2, window.innerHeight *)
+              x:gsap.utils.random(-window.innerWidth, window.innerWidth * 2),
+              y:gsap.utils.random(-window.innerHeight, window.innerHeight * 2)
             }
             let curPos = {
               x:gsap.getProperty(element, "x"),
