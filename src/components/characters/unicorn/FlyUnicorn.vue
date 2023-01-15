@@ -21,8 +21,8 @@ export default ({
 
           function moveUnicorn(element) {
             let newPos = {
-              x:gsap.utils.random(-window.innerWidth, window.innerWidth * 2),
-              y:gsap.utils.random(-window.innerHeight, window.innerHeight * 2)
+              x:gsap.utils.random(-window.innerWidth / 2, window.innerWidth * 1.5),
+              y:gsap.utils.random(-window.innerHeight / 2, window.innerHeight * 1.5)
             }
             let curPos = {
               x:gsap.getProperty(element, "x"),
@@ -70,7 +70,6 @@ export default ({
           element.addEventListener('dblclick', () => {
              // to do
           })
-
         }
     },
     
@@ -88,7 +87,7 @@ export default ({
 
 #unicorn {
   @include size(20vw, auto);
-  @include absolute(0, null, null, -10%);
+  @include absolute(30%, null, null, -10%);
   z-index: 2000;
 
     @media screen and (min-width: $screen-desktop) {
