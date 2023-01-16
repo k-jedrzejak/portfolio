@@ -51,7 +51,7 @@ export default {
   z-index: 2;
   background: linear-gradient(0deg, rgba(222, 12, 120, 0) 0%, rgba(222, 12, 120, 0.3508753843334209) 26%, rgba(222, 12, 120, 1) 100%);
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: $screen-desktop) {
     left: 1rem;
   }
 }

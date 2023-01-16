@@ -34,7 +34,7 @@ $cloud3Path: '../../assets/clouds-3.webp';
 }
 .cloud{
   @include absolute;
-  @include size(120vw, 120vh);
+  @include size(215vw, 120vh);
   transform-origin: 50% 50%;
   @include bg-image($cloud1Path, contain, center);
   opacity: 0.6;
@@ -43,9 +43,19 @@ $cloud3Path: '../../assets/clouds-3.webp';
     }
     &.cloud-3 {
       @include bg-image($cloud3Path, contain, center);
-      @include size(100vw, 100vh);
+      @include size(200vw, 100vh);
       z-index: -1;
       opacity: 0.25;
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: $screen-desktop) {
+    .cloud {
+      @include size(120vw, 120vh);
+      &.cloud-3 {
+        @include size(100vw, 100vh);
+      }
     }
   }
 </style>
