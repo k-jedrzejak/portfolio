@@ -4,20 +4,20 @@
         <div 
         v-motion
         :initial="{ opacity: 0 }"
-        :enter="{ opacity: 1,  transition: { delay: 800, duration: 1000,ease: 'easeIn'} }"
+        :enter="{ opacity: 1,  transition: { delay: 400, duration: 1000,ease: 'easeIn'} }"
         >karolina</div>
        
         <div class="color" 
         v-motion
         :initial="{ opacity: 0,  y: -800, rotate: 1420 }"
-        :enter="{ opacity: 1,  y: 0, scale: 1, rotate: 0,transition: {delay: 1000, duration: 1500, ease: 'linear'} }"
+        :enter="{ opacity: 1,  y: 0, scale: 1, rotate: 0,transition: {delay: 100, duration: 1500, ease: 'linear'} }"
         >.j</div>
       </h1>
 
       <TextBlock
         v-motion
         :initial="{ opacity: 0,  x: -80 }"
-        :enter="{ opacity: 1,  x: 0,transition: {delay: 1700, duration: 800, ease: 'linear'} }">
+        :enter="{ opacity: 1,  x: 0,transition: {delay: 1700, duration: 1200, ease: 'linear'} }">
         <div class="color">Karolina Jedrzejak</div>
         <div class="gray">Frontend Developer</div>
       </TextBlock>

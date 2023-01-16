@@ -24,9 +24,9 @@ import TitleFunction from '../TitleFunction.vue';
   
 <style lang="scss" scoped>
 
-$cloud1Path: '../../assets/clouds-1.png';
-$cloud2Path: '../../assets/clouds-2.png';
-$cloud3Path: '../../assets/clouds-3.png';
+$cloud1Path: '../../assets/clouds-1.webp';
+$cloud2Path: '../../assets/clouds-2.webp';
+$cloud3Path: '../../assets/clouds-3.webp';
 
 #clouds {
   @include fixed(0,0,0,0);

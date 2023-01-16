@@ -5,7 +5,7 @@
     <div class="static-container">
       <h1 class="title" v-motion
         :initial="{ opacity: 0,  y: -80 }"
-        :enter="{ opacity: 1,  y: 0,transition: {delay: 500, duration: 800, ease: 'linear'} }">about(<span class="params color">karolina</span>)</h1>
+        :enter="{ opacity: 1,  y: 0,transition: {delay: 300, duration: 800, ease: 'linear'} }">about(<span class="params color">karolina</span>)</h1>
 
       <TextBlock v-motion
         :initial="{ opacity: 0,  x: -80 }"

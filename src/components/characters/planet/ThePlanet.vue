@@ -42,6 +42,6 @@ export default({
 
 <style lang="scss" scoped>
 .planet {
-  @include bg-image("./planet.png");
+  @include bg-image("./planet.webp");
 }
 </style>

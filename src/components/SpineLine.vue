@@ -22,7 +22,7 @@ export default {
 			timeline
       .from(spine, {
         yPercent: 200,
-				duration: 4,
+				duration: 2,
         ease: "back.out(1.7)"
 			},0)
 			.to(spine,{
