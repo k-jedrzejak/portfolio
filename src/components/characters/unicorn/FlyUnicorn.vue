@@ -63,7 +63,7 @@ export default ({
               // to do
             }
             lastClick = time;
-          })
+          }, {passive: true})
         },
 
         doubleClickUnicorn(element) {
