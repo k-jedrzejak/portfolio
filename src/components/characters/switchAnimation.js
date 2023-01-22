@@ -21,9 +21,6 @@ export const setAnimation = {
     isPlaying() {
       this.toggleAnimation()
     },
-    svg() {
-      this.toggleAnimation()
-    },
   },
   methods: {
     destroy() {
