@@ -26,6 +26,7 @@
    
     "skills": [
       [ "JavaScript",
+      "TypeScript",
       "CSS",
       "HTML",
       "Vue",
@@ -34,9 +35,9 @@
       "Python - basic",
       "PHP - basic",
       "Magento2",
-      "Wordpress"],
+      "WordPress"],
       [
-        "Figma", "Photoshop", "Visual Studio Code", "PhpStorm, PyCharm"
+        "Figma", "Photoshop", "Zeplin", "Visual Studio Code", "PhpStorm", "PyCharm"
       ],
       ["Critical thinking", "Problem-solving", "Collaboration", "Willingness to learn", "Accepting feedback","Communication"],
       ["Listening", "Flexibility",  "Self-awareness", 
