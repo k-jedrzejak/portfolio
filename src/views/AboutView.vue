@@ -3,13 +3,28 @@
     div
     <div class="pic"></div>
     <div class="static-container">
-      <h1 class="title" v-motion
-        :initial="{ opacity: 0,  y: -80 }"
-        :enter="{ opacity: 1,  y: 0,transition: {delay: 300, duration: 800, ease: 'linear'} }">about(<span class="params color">karolina</span>)</h1>
+      <h1
+        class="title"
+        v-motion
+        :initial="{ opacity: 0, y: -80 }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 300, duration: 800, ease: 'linear' },
+        }"
+      >
+        about(<span class="params color">karolina</span>)
+      </h1>
 
-      <TextBlock v-motion
-        :initial="{ opacity: 0,  x: -80 }"
-        :enter="{ opacity: 1,  x: 0,transition: {delay: 1000, duration: 800, ease: 'linear'} }">
+      <TextBlock
+        v-motion
+        :initial="{ opacity: 0, x: -80 }"
+        :enter="{
+          opacity: 1,
+          x: 0,
+          transition: { delay: 1000, duration: 800, ease: 'linear' },
+        }"
+      >
         <div class="first-fold">
           <ul class="about-contact">
             <li v-for="link in data.links" :key="link.url">
@@ -47,10 +62,10 @@
 
         <div class="about-grid">
           <h2>Skills</h2>
-          <div class="columns fluent">
+          <div class="columns skills">
             <ul>
               <li v-for="(skills, i) in data.skills" :key="i">
-                {{ skills.join(', ') }}<br />
+                {{ skills.join(", ") }}<br />
               </li>
             </ul>
           </div>
@@ -94,41 +109,39 @@
 </template>
 
 <script>
-import TextBlock from '../components/TextBlock.vue';
-import GithubIcon from '@/components/icon/GithubIcon.vue';
-import LinkedInIcon from '@/components/icon/LinkedInIcon.vue';
-import SpineLine from '@/components/SpineLine.vue';
-import { fetchData, removeBodyClass, addBodyClass} from '@/utils';
-import { ref, onMounted } from 'vue';
+import TextBlock from "../components/TextBlock.vue";
+import GithubIcon from "@/components/icon/GithubIcon.vue";
+import LinkedInIcon from "@/components/icon/LinkedInIcon.vue";
+import SpineLine from "@/components/SpineLine.vue";
+import { fetchData, removeBodyClass, addBodyClass } from "@/utils";
+import { ref, onMounted } from "vue";
 
 export default {
-  name: 'AboutView',
+  name: "AboutView",
   components: { TextBlock, GithubIcon, LinkedInIcon, SpineLine },
   data() {
     return {
       data: {},
-    }
+    };
   },
   async mounted() {
-    this.data = await fetchData()
+    this.data = await fetchData();
   },
-  setup(){
+  setup() {
     const about = ref();
     onMounted(() => {
-      if(about.value) {
+      if (about.value) {
         removeBodyClass("home");
         addBodyClass("about");
       }
-    })
-    return {about}
+    });
+    return { about };
   },
-
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
-$myImgPath: '../assets/me9.jpg';
+$myImgPath: "../assets/me9.jpg";
 
 .page-about {
   .header-bg {
@@ -146,7 +159,7 @@ $myImgPath: '../assets/me9.jpg';
     display: block;
     z-index: 0;
     aspect-ratio: 1;
-    @include bg-image($myImgPath, contain, right );
+    @include bg-image($myImgPath, contain, right);
     border-radius: 50%;
 
     @media screen and (min-width: $screen-desktop) {
@@ -163,7 +176,7 @@ $myImgPath: '../assets/me9.jpg';
     @media screen and (min-width: $screen-desktop) {
       .static-container {
         padding-top: 30vh;
-      }   
+      }
     }
   }
   .about-contact {
@@ -228,7 +241,7 @@ $myImgPath: '../assets/me9.jpg';
     @include size(65vw);
     padding: 3rem 0 0 0;
     margin-right: -25vw;
-  
+
     h2 {
       font-size: 1.2rem;
       margin-bottom: 1rem;
@@ -252,7 +265,7 @@ $myImgPath: '../assets/me9.jpg';
       line-height: 1.5em;
       color: $color-gray;
     }
-   .tools {
+    .tools {
       display: grid;
       grid-template: 1fr / repeat(4, 1fr);
       grid-gap: 2rem;
