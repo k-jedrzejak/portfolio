@@ -3,19 +3,18 @@
 //-------------------------------------------
 
 $color-white: #fff;
-$color-gray: #9F9B9E;
+$color-gray: #9f9b9e;
 $color-magenta: #de0c78;
 $color-magenta-dark: #901454;
 $color-black: #0e1212;
 $color-primary: $color-magenta;
-$color-transparent: rgba( 0,0,0,0);
-
+$color-transparent: rgba(0, 0, 0, 0);
 
 //
 // Fonts
 //-------------------------------------------
 
-$font-family-base: 'Source Code Pro', monospace;
+$font-family-base: "Source Code Pro", monospace;
 
 $font-s: calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)));
 $font-m: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
@@ -23,26 +22,24 @@ $font-l: calc(18px + (22 - 18) * ((100vw - 300px) / (1600 - 300)));
 $font-xl: calc(32px + (36 - 32) * ((100vw - 300px) / (1600 - 300)));
 $font-xxl: calc(34px + (64 - 34) * ((100vw - 300px) / (1600 - 300)));
 
-$font-menu-mobile:  $font-xl;
+$font-menu-mobile: $font-xl;
 $font-menu-desktop: $font-m;
-
 
 //
 // Layout
 //------------------------------------------
 
-$indent-base:       4px;
-$indent-xxs:        $indent-base * 2;   // 8px
-$indent-xs:         $indent-base * 3;   // 12px
-$indent-s:          $indent-base * 4;   // 16px
-$indent-m:          $indent-base * 5;   // 20px
-$indent-l:          $indent-base * 6;   // 24px
-$indent-xl:         $indent-base * 8;   // 32px
-$indent-xxl:        $indent-base * 10;  // 40px
-$indent-xxxl:       $indent-base * 15;  // 60px
+$indent-base: 4px;
+$indent-xxs: $indent-base * 2; // 8px
+$indent-xs: $indent-base * 3; // 12px
+$indent-s: $indent-base * 4; // 16px
+$indent-m: $indent-base * 5; // 20px
+$indent-l: $indent-base * 6; // 24px
+$indent-xl: $indent-base * 8; // 32px
+$indent-xxl: $indent-base * 10; // 40px
+$indent-xxxl: $indent-base * 15; // 60px
 
 $wrapper-width: 700px;
-
 
 //
 // Responsive
@@ -50,4 +47,4 @@ $wrapper-width: 700px;
 
 $screen-mobile: 576px;
 $screen-tablet: 768px;
-$screen-desktop: 1024px;
+$screen-desktop: 1025px;

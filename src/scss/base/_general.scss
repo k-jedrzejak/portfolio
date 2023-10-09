@@ -2,86 +2,82 @@
 // Common
 //-------------------------------------------
 
-
-body {  
-    font-family: $font-family-base;
-    color: $color-white;
-    background: $color-black;
-    text-shadow: 0.03em 0.03em #0e1212, 0.01em -0.01em #0e1212, -0.01em 0.03em #0e1212, -0.02em -0.01em #0e1212;
-    &.load {
-        overflow: hidden;
-    }
+body {
+  font-family: $font-family-base;
+  color: $color-white;
+  background: $color-black;
+  text-shadow: 0.03em 0.03em #0e1212, 0.01em -0.01em #0e1212,
+    -0.01em 0.03em #0e1212, -0.02em -0.01em #0e1212;
+  &.load {
+    overflow: hidden;
+  }
 }
 
 a {
-    color: $color-white;
-    @include transition;
-    text-decoration: none;
+  color: $color-white;
+  @include transition;
+  text-decoration: none;
 
-    &:visited {
-        color: inherit;
-    }
-    
-    &:hover {
-        color: $color-primary;
-    }
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
 }
 
 .color {
-    color: $color-primary;
+  color: $color-primary;
 }
 
 .gray {
-    color: $color-gray;
+  color: $color-gray;
 }
 
 .big {
-    display: block;
-    font-size: $font-xxl;
-    font-weight: 700;
-    word-spacing: -0.1em;
-    letter-spacing: -0.05em;
-    width: 70vw;
-    line-height: 1.2;
+  display: block;
+  font-size: $font-xxl;
+  font-weight: 700;
+  word-spacing: -0.1em;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
 
-    @media screen and (max-width: $screen-mobile) {
-        width: 80vw;
-        margin: 1rem 0;
-    }
+  @media screen and (max-width: $screen-mobile) {
+    width: 80vw;
+    margin: 1rem 0;
   }
+}
 
 .title {
-    font-size: $font-xxl;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    word-break: break-word;
-    hyphens: auto;
-    z-index: 1;
+  font-size: $font-xxl;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  word-break: break-word;
+  hyphens: auto;
+  z-index: 1;
 }
 
 .text {
-    line-height: 1.5;
-    font-size: $font-l;
+  line-height: 1.5;
+  font-size: $font-l;
 }
 
 // scrollbar
 
 ::-webkit-scrollbar {
-    width: 10px;
-}
-  
-  ::-webkit-scrollbar-track {
-    background: $color-black; 
-}
-   
-  ::-webkit-scrollbar-thumb {
-    background: $color-primary; 
-    border-radius: 10px;
-}
-  
-  ::-webkit-scrollbar-thumb:hover {
-   opacity: .9;
+  width: 10px;
 }
 
+::-webkit-scrollbar-track {
+  background: $color-black;
+}
 
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.9;
+}
