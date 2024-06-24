@@ -6,7 +6,6 @@
         subtitle="// currently"
       ></TitleFunction>
     </TitleSection>
-
     <SceneSection id="ce1">
       <TextBlock>
         <p>Currently, I'm weaving the first chapter of my Canadian saga</p>
@@ -24,7 +23,6 @@
             >CE Solutions</a
           >.
         </p>
-
         <p>
           Software Development Agency that create cost effective solutions to
           save customers money.
@@ -36,7 +34,6 @@
           <AstroTime :isPlaying="isPlaying" />
           <TheClock :isPlaying="isPlaying" />
         </div>
-        
       </template>
     </SceneSection>
 
@@ -79,7 +76,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 #astro-clock-container {
   position: relative;
   height: 100vh;
@@ -93,7 +89,6 @@ export default {
     @include size(35vh, 35vh);
   }
 }
-
 #astroTime {
   @include absolute(-4vh, 2vh, null, null);
   @include size(250px, 100vh);
@@ -119,13 +114,13 @@ export default {
   }
 
   #astroTime {
-    @include size(400px, 100vh);
+    @include size(400px);
     opacity: 1;
     @include absolute(-16vh, -3vh, null, null);
   }
 
   #clock {
-    @include size(290px,100vh);
+    @include size(290px);
     @include absolute(1vh, -1vh, null, null);
     opacity: 1;
   }
@@ -144,13 +139,12 @@ export default {
     @include absolute(0, null, null, 5vh);
     transform: scaleX(1);
     @include size(initial);
-    @include size(400px,100vh);
-
+    @include size(400px);
   }
 
   #clock {
     @include absolute(21vh, null, null, 2vh);
-    @include size(350px, 100vh);
+    @include size(350px);
   }
 }
 </style>
