@@ -32,8 +32,11 @@
       </TextBlock>
       <template #animeContainer>
         <CeLogo />
-        <AstroTime :isPlaying="isPlaying" />
-        <TheClock :isPlaying="isPlaying" />
+        <div id="astro-clock-container">
+          <AstroTime :isPlaying="isPlaying" />
+          <TheClock :isPlaying="isPlaying" />
+        </div>
+        
       </template>
     </SceneSection>
 
@@ -76,6 +79,11 @@ export default {
 </script>
 
 <style lang="scss">
+
+#astro-clock-container {
+  position: relative;
+  height: 100vh;
+}
 #ceLogo {
   @include absolute(5vh, null, null, 50%);
   transform: translateX(-50%);
@@ -87,16 +95,16 @@ export default {
 }
 
 #astroTime {
-  @include absolute(-50vw, 2vw, null, null);
-  @include size(250px);
+  @include absolute(-4vh, 2vh, null, null);
+  @include size(250px, 100vh);
   transform: scaleX(-1);
   z-index: 3;
   opacity: 0.8;
 }
 
 #clock {
-  @include size(200px);
-  @include absolute(70vw, 2vw, null, null);
+  @include size(200px, 100vh);
+  @include absolute(8vh, 2vh, null, null);
   opacity: 0.8;
 }
 
@@ -111,14 +119,14 @@ export default {
   }
 
   #astroTime {
-    @include size(300px);
+    @include size(400px, 100vh);
     opacity: 1;
-    @include absolute(-25vw, 1vw, null, null);
+    @include absolute(-16vh, -3vh, null, null);
   }
 
   #clock {
-    @include size(200px);
-    @include absolute(25vw, 2vw, null, null);
+    @include size(290px,100vh);
+    @include absolute(1vh, -1vh, null, null);
     opacity: 1;
   }
 }
@@ -133,14 +141,16 @@ export default {
   }
 
   #astroTime {
-    @include absolute(-7vw, null, null, 0);
+    @include absolute(0, null, null, 5vh);
     transform: scaleX(1);
     @include size(initial);
+    @include size(400px,100vh);
+
   }
 
   #clock {
-    @include absolute(20vw, null, null, 2vw);
-    @include size(350px);
+    @include absolute(21vh, null, null, 2vh);
+    @include size(350px, 100vh);
   }
 }
 </style>
