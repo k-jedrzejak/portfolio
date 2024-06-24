@@ -141,7 +141,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$myImgPath: "../assets/me9.jpg";
+$myImgPath: "../assets/me9.webp";
 
 .page-about {
   .header-bg {
