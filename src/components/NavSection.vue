@@ -43,7 +43,7 @@
                         :title="link.title"
                         class="nav-link social-link"
                         target="_blank">
-                        <font-awesome-icon :icon="['fab', link.icon]"/>
+                        <font-awesome-icon :title=link.icon :icon="['fab', link.icon]" aria-hidden="true"/>
                     </a>
                 </li>
             </ul>
