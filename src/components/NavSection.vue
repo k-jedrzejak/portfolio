@@ -41,6 +41,7 @@
                     <a
                         :href="link.url"
                         :title="link.title"
+                        :aria-label="link.description"
                         class="nav-link social-link"
                         target="_blank">
                         <font-awesome-icon :title=link.icon :icon="['fab', link.icon]" aria-hidden="true"/>
@@ -65,11 +66,16 @@
                     {
                         name: 'LinkedIn',
                         url: 'https://www.linkedin.com/in/kjedrzejak/',
-                        icon: 'linkedin'
+                        icon: 'linkedin',
+                        description: 'Go to my LinkedIn'
+
+
                     }, {
                         name: 'GitHub',
                         url: 'https://github.com/k-jedrzejak',
-                        icon: 'github'
+                        icon: 'github',
+                        description: 'Go to my GitHub'
+
                     }
                 ]
             }
