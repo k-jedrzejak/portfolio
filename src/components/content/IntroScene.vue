@@ -6,7 +6,7 @@
         :initial="{ opacity: 0 }"
         :enter="{
           opacity: 1,
-          transition: { delay: 400, duration: 1000, ease: 'easeIn' },
+          transition: { delay: 100, duration: 600, ease: 'easeIn' },
         }"
       >
         karolina
@@ -21,7 +21,7 @@
           y: 0,
           scale: 1,
           rotate: 0,
-          transition: { delay: 100, duration: 1300, ease: 'linear' },
+          transition: { delay: 50, duration: 1200, ease: 'linear' },
         }"
       >
         .j
@@ -34,7 +34,7 @@
       :enter="{
         opacity: 1,
         x: 0,
-        transition: { delay: 1200, duration: 900, ease: 'linear' },
+        transition: { delay: 900, duration: 900, ease: 'linear' },
       }"
     >
       <div class="color">Karolina Jedrzejak</div>
