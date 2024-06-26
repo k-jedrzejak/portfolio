@@ -1,24 +1,25 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import AboutView from '../views/AboutView.vue';
 import NProgress from 'nprogress';
 import { removeBodyClass, addBodyClass} from '@/utils';
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  linkExactActiveClass: "active",
-  routes:  [
+  history: createWebHashHistory(),
+  linkExactActiveClass: 'active',
+  routes: [
     {
       path: '/',
-      name: '.all',
-      component: HomeView,
+      name: 'Home',
+      component: HomeView
     },
     {
       path: '/about',
-      name: '.about',
-      component: () => import('../views/AboutView.vue'),
+      name: 'About',
+      component: AboutView
     }
   ]
-})
+});
 
 // progress bar
 NProgress.configure({
