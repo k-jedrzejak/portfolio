@@ -55,8 +55,9 @@
             <span v-for="(line, i) in data.subtitles" :key="i">
               // {{ line }}<br />
             </span>
-            // {{ data.experiences[0].position }} @
-            {{ data.experiences[0].company }}
+            // {{ data.experiences[0].position }} 
+            <!-- TO DO: when company name is know -->
+            <!-- @ {{ data.experiences[0].company }} -->
           </p>
         </div>
 

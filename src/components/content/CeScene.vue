@@ -3,12 +3,12 @@
     <TitleSection scene="ceTitle">
       <TitleFunction
         selectorId="ceSolutions"
-        subtitle="// currently"
+        subtitle="// August 2023 to June 2024"
       ></TitleFunction>
     </TitleSection>
     <SceneSection id="ce1">
       <TextBlock>
-        <p>Currently, I'm weaving the first chapter of my Canadian saga</p>
+        <p>I wove the first chapter of my Canadian tale</p>
         <p class="big">
           as a
           <strong class="color">Software Developer</strong><br />
