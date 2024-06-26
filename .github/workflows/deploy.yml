@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main  # Możesz zmienić na swoją główną gałąź
 
 jobs:
   deploy:
@@ -21,22 +21,15 @@ jobs:
           git config --global user.name "${USER_NAME}"
           git config --global user.email "${USER_EMAIL}"
 
-      - name: Fetch and checkout gh-pages branch
+      - name: Build project
         run: |
-          git fetch origin gh-pages:gh-pages
+          npm install
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git fetch origin
           git checkout gh-pages || git checkout --orphan gh-pages
-
-      - name: Remove existing contents except .git
-        run: |
-          find . -path ./.git -prune -o -exec rm -rf {} \; 2> /dev/null || exit 0
-          git add -A
-          git commit -m "Clean gh-pages branch"
-          git push origin gh-pages
-
-      - name: Copy contents from dist directory
-        run: |
-          git fetch origin gh-pages:gh-pages
-          git checkout gh-pages
           git rm -rf .
           cp -r ../dist/* .
           git add .
