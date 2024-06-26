@@ -3,7 +3,7 @@
 //------------------------------------------
 
 #header {
-    @include size(100%,8rem);
+    @include size(100vw,8rem);
     @include fixed(0, null, null, 0);
     z-index: 10;
     padding: 0 $indent-xs $indent-xxxl;
