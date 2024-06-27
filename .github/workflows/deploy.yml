@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Możesz zmienić na swoją główną gałąź
+      - main
 
 jobs:
   deploy:
@@ -26,12 +26,19 @@ jobs:
           npm install
           npm run build
 
+      - name: Update dist directory
+        run: |
+          rsync -av --delete --exclude='.git' ./dist/ ./temp-dist/
+          rm -rf ./dist/*
+          mv ./temp-dist/* ./dist/
+          rm -rf ./temp-dist
+
       - name: Deploy to GitHub Pages
         run: |
           git fetch origin
           git checkout gh-pages || git checkout --orphan gh-pages
           git rm -rf .
           cp -r dist/* .
-          git add .
+          git add -A 
           git commit -m "Deploy to GitHub Pages"
           git push origin gh-pages
