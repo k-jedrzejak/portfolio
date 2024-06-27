@@ -83,8 +83,7 @@ export default {
 #ceLogo {
   @include absolute(5vh, null, null, 50%);
   transform: translateX(-50%);
-  opacity: 0.6;
-
+  filter: brightness(0.8);
   svg {
     @include size(35vh, 35vh);
   }
@@ -94,13 +93,12 @@ export default {
   @include size(250px, 100vh);
   transform: scaleX(-1);
   z-index: 3;
-  opacity: 0.8;
+  filter: brightness(0.9)
 }
 
 #clock {
   @include size(200px, 100vh);
   @include absolute(8vh, 2vh, null, null);
-  opacity: 0.8;
 }
 
 // Tablet
@@ -115,14 +113,13 @@ export default {
 
   #astroTime {
     @include size(400px);
-    opacity: 1;
     @include absolute(-16vh, -3vh, null, null);
+    filter: brightness(1);
   }
 
   #clock {
     @include size(290px);
     @include absolute(1vh, -1vh, null, null);
-    opacity: 1;
   }
 }
 
@@ -130,6 +127,7 @@ export default {
 @media screen and (min-width: $screen-desktop) {
   #ceLogo {
     @include absolute(0vw, -5vw, null, initial);
+    filter: brightness(1);
     svg {
       @include size(20vw, 20vw);
     }
@@ -145,6 +143,7 @@ export default {
   #clock {
     @include absolute(21vh, null, null, 2vh);
     @include size(350px);
+    filter: brightness(1.2);
   }
 }
 </style>
