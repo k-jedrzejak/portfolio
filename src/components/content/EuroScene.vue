@@ -94,7 +94,7 @@ export default {
   @include absolute(30%, null, null, 50%);
   transform: translate(-50%, -50%);
   @include size(70vw);
-  opacity: 0.6;
+  filter: brightness(0.8);
 }
 
 #toaster {
@@ -128,6 +128,7 @@ export default {
   #euroLogo {
     @include absolute(20%, null, null, null);
     @include size(40vw);
+    filter: brightness(1);
   }
 
   #toaster {

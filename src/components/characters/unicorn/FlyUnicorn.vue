@@ -175,13 +175,13 @@ export default ({
 <style lang="scss" scoped>
 
 #unicorn {
-  @include size(34vw, auto);
+  @include size(24vw, auto);
   @include absolute(30%, null, null, 10%);
   z-index: 2000;
   cursor: pointer;
 
     @media screen and (min-width: $screen-desktop) {
-      @include size(12vw, auto); 
+      @include size(10vw, auto); 
     }
 }
 </style>

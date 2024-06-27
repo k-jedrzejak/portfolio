@@ -31,13 +31,14 @@ $cloud3Path: '../../assets/clouds-3.webp';
 #clouds {
   @include fixed(0,0,0,0);
   visibility: hidden;
+  z-index: -1;
 }
 .cloud{
   @include absolute;
   @include size(215vw, 120vh);
   transform-origin: 50% 50%;
   @include bg-image($cloud1Path, contain, center);
-  opacity: 0.6;
+  opacity: 0.8;
     &.cloud-2 {
       @include bg-image($cloud2Path, contain, center);
     }
