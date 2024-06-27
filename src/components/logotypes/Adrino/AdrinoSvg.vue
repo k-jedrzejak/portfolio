@@ -2,9 +2,10 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    id="body_1"
-    width="215"
-    height="57"
+    id="adrinoLogoImage"
+    width="215px"
+    height="57px"
+    viewBox="0 0 215 57"
   >
     <g transform="matrix(1.3333334 0 0 1.3333334 0 0)">
       <image

@@ -91,7 +91,7 @@ export default {
 
 <style lang="scss">
 #euroLogo {
-  @include absolute(30%, null, null, 50%);
+  @include absolute(20vh, null, null, 50%);
   transform: translate(-50%, -50%);
   @include size(70vw);
   filter: brightness(0.8);
@@ -99,7 +99,7 @@ export default {
 
 #toaster {
   @include relative(null, null, -12rem, -1rem);
-  @include size(200px);
+  @include size(25vh);
   z-index: 9;
 }
 
@@ -111,7 +111,7 @@ export default {
 // Tablet
 @media screen and (min-width: $screen-tablet) {
   #euroLogo {
-    @include size(50vw);
+    @include size(40vw);
   }
 
   .planet {
@@ -119,7 +119,7 @@ export default {
   }
 
   #toaster {
-    @include size(350px);
+    @include size(38vh);
   }
 }
 
@@ -127,13 +127,13 @@ export default {
 @media screen and (min-width: $screen-desktop) {
   #euroLogo {
     @include absolute(20%, null, null, null);
-    @include size(40vw);
-    filter: brightness(1);
+    @include size(30vw);
+    filter: brightness(0.9);
   }
 
   #toaster {
     @include relative(null, null, -8rem, -2rem);
-    @include size(450px);
+    @include size(60vh);
     z-index: 9;
   }
 

@@ -72,14 +72,14 @@ export default {
 
 <style lang="scss">
 #acLogo {
-  @include size(90vw, 90vw);
-  @include absolute(10%, null, null, -9vh);
+  @include size(45vh, 45vh);
+  @include absolute(10vh, null, null, -9vh);
   z-index: 10;
 }
 
 #astroMagento {
-  @include absolute(-100px, 0);
-  @include size(250px);
+  @include absolute(20vh, 0);
+  @include size(35vh,100vh);
   z-index: 3;
   filter: brightness(0.9);
 }
@@ -87,24 +87,26 @@ export default {
 // Tablet
 @media screen and (min-width: $screen-tablet) {
   #acLogo {
-    @include size(50vw, 50vw);
-    @include absolute(calc(50% - 30vw), null, null, -10vw);
+    @include size(50vh, 50vh);
+    @include absolute(15vh, null, null, -10vh);
   }
 
   #astroMagento {
-    @include size(300px);
+    @include size(45vh);
+    @include absolute(15vh, 0);
   }
 }
 
 // Desktop
 @media screen and (min-width: $screen-desktop) {
   #acLogo {
-    @include absolute(calc(50% - 15vw), null, null, -10vw);
+    @include absolute(20vh, null, null, -2vh);
+    @include size(60vh, 85vh);
   }
 
   #astroMagento {
-    @include size(400px);
-    filter: brightness(1);
+    @include size(50vh, 100vh);
+    @include absolute(10vh, 0 null, null);
   }
 }
 
