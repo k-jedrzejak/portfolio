@@ -77,7 +77,7 @@
 
   #astroWork {
     @include absolute(null, 2vh, 8vh, null);
-    @include size(52vh, auto);
+    @include size(35vh, auto);
     filter: brightness(0.9);
   }
 

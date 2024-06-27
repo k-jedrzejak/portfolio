@@ -90,7 +90,7 @@ export default {
   }
 }
 #astroTime {
-  @include absolute(-4vh, 2vh, null, null);
+  @include absolute(21vh, 2vh, null, null);
   @include size(30vh, 100vh);
   transform: scaleX(-1);
   z-index: 3;
@@ -99,7 +99,7 @@ export default {
 
 #clock {
   @include size(26vh, 100vh);
-  @include absolute(8vh, 0, null, null);
+  @include absolute(34vh, 0, null, null);
 }
 
 // Tablet
