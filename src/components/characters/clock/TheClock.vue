@@ -52,7 +52,9 @@ export default {
     this.updateClockHands();
     this.intervalId = setInterval(this.updateClockHands, 1000);
   },
-
+  beforeUnmount() {
+    clearInterval(this.intervalId);
+  },
   computed: {
     secondTransform() {
       return `rotate(${this.rotation.Second}, 256, 256)`;
