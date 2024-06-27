@@ -6,7 +6,7 @@
 import AstroTimeSvg from "./AstroTimeSvg.vue";
 import { gsap } from "gsap";
 
-import { loopBackInOut, loop, loopSineinOut } from "@/constants";
+import { loopBackInOut, basicLoop, loopSineInOut } from "@/constants";
 import { setAnimation } from "../switchAnimation";
 import { isProxy, toRaw } from "vue";
 
@@ -44,7 +44,7 @@ export default {
           y: "random(-410, 10)",
           x: "random(-50, 50)",
           duration: "random(2, 4)",
-          ...loopSineinOut,
+          ...loopSineInOut,
           repeatRefresh: true,
         },
         0
@@ -60,7 +60,7 @@ export default {
           repeatDelay: 3,
           duration: "random(1, 6)",
           transformOrigin: "50% 50%",
-          ...loopSineinOut,
+          ...loopSineInOut,
           repeatRefresh: true,
         },
         0
@@ -74,7 +74,7 @@ export default {
           rotate: 4,
           duration: 2,
           repeatDelay: 3,
-          ...loopSineinOut,
+          ...loopSineInOut,
           repeatRefresh: true,
         },
         0
@@ -88,7 +88,7 @@ export default {
           rotate: 3,
           duration: 2,
           repeatDelay: 3,
-          ...loopSineinOut,
+          ...loopSineInOut,
           repeatRefresh: true,
         },
         0
@@ -106,7 +106,7 @@ export default {
             transformOrigin: "50% 50%",
 
             duration: 20,
-            loop,
+            ...basicLoop,
             repeatRefresh: true,
           },
           0
