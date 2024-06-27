@@ -4,7 +4,7 @@
 
 <script>
 import AstroWorkSvg from './AstroWorkSvg.vue';
-import {loop, loopBounce, loopSineinOut, loopBackInOut} from '@/constants'
+import {basicLoop, loopBounce, loopSineInOut, loopBackInOut} from '@/constants'
 import { setAnimation } from '../switchAnimation';
 import { isProxy, toRaw } from 'vue';
 
@@ -46,12 +46,12 @@ export default ({
 					rotate: 360,
                     transformOrigin: "50%, 50%",
 					duration: 5,
-					...loopSineinOut
+					...loopSineInOut
 				},0)
                 .fromTo(star, { scale: 1.2 }, {
                     scale: .6,
                     duration: 3,
-					...loop
+					...basicLoop
                 },0)
       
 			});
@@ -63,7 +63,7 @@ export default ({
 				y: -2,
 				duration: "random(1, 1.8)",
 				transformOrigin: '50% 50%',
-				...loopSineinOut,
+				...loopSineInOut,
 				repeatRefresh: true
 			},0)
 			/* head  */	
@@ -71,7 +71,7 @@ export default ({
 				rotateZ: 10,
 				duration: 3,
 				transformOrigin: '30% 50%',
-				...loopSineinOut
+				...loopSineInOut
 			},0)
 			/* light  */	
 			.fromTo(light, {opacity: 0.1}, {

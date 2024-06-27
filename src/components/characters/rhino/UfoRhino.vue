@@ -5,7 +5,7 @@
 
 <script>
 import UfoRhinoSvg from './UfoRhinoSvg.vue';
-import {loopSineinOut, loopBounce, loop} from '@/constants';
+import {loopSineInOut, loopBounce, basicLoop} from '@/constants';
 import { setAnimation } from '../switchAnimation';
 import { isProxy, toRaw } from 'vue';
 
@@ -40,7 +40,7 @@ export default ({
 				rotateZ: "random(-7, 3)",
 				duration: "random(1, 3)",
 				transformOrigin: "50% 50%",
-				...loopSineinOut,
+				...loopSineInOut,
 				repeatRefresh: true
 			},0)
 		})
@@ -61,7 +61,7 @@ export default ({
 			.fromTo(laser, {opacity: 1}, {
 				opacity:"random(0.3, 1)",
 				duration: "random(0.3, 1.3)",
-				...loopSineinOut,
+				...loopSineInOut,
 				repeatRefresh: true,
 			},0)
 		})
@@ -73,7 +73,7 @@ export default ({
 				.fromTo(cloud,{x: 30}, {
 					x: "random(-30, 20)",
 					duration: index + 3 ,
-					...loopSineinOut,
+					...loopSineInOut,
 					repeatRefresh: true,
 				},0)
 			}
@@ -82,7 +82,7 @@ export default ({
 				.fromTo(cloud, {x: -30}, {
 					x: "random(-20, 20)",
 					duration: "random(1, 3)" ,
-					...loopSineinOut,
+					...loopSineInOut,
 					repeatRefresh: true,
 				},0)
 			}
@@ -93,7 +93,7 @@ export default ({
 			.fromTo(rhino, {y: 10}, {
 				y: "random(-60, -30)",
 				duration: 3,
-				...loopSineinOut,
+				...loopSineInOut,
 				repeatRefresh: true
 			},0)
 
@@ -104,7 +104,7 @@ export default ({
 				scaleY: 0.5,
 				duration: 3,
 				repeatDelay: 0,
-				...loop
+				...basicLoop
 			},0)
 			.to(shadow, {
 				transformOrigin: '50% 50%',
@@ -112,21 +112,21 @@ export default ({
 				scaleY: 1,
 				duration: 3,
 				repeatDelay: 0,
-				...loop
+				...basicLoop
 			},1)
 			.from(shadow, {
 				rotateZ: -6,
 				duration: 2,
 				transformOrigin: '50% 50%',
 				repeatDelay: 3,
-				...loop
+				...basicLoop
 			},0)
 			.to(shadow, {
 				rotateZ: 2,
 				duration: 2,
 				transformOrigin: '50% 50%',
 				repeatDelay: 3,
-				...loop
+				...basicLoop
 			},0)
 		/* alien eye  */	
 			.fromTo(eye, {scaleY: 1},{
@@ -150,7 +150,7 @@ export default ({
 				duration: 1,
 				transformOrigin: '4% 4%',
 				repeatDelay: 4,
-				...loopSineinOut
+				...loopSineInOut
 			},0)
 
 		/* ufo */
@@ -158,7 +158,7 @@ export default ({
 				rotateZ: -2,
 				duration: 2,
 				repeatDelay: 3,
-				...loopSineinOut
+				...loopSineInOut
 			},0)
         }
     },

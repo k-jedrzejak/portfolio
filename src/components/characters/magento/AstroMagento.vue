@@ -4,7 +4,7 @@
 
 <script>
 import AstroMagentoSvg from './AstroMagentoSvg.vue';
-import {loopSineinOut} from '@/constants'
+import {loopSineInOut} from '@/constants'
 import { setAnimation } from '../switchAnimation';
 import { isProxy, toRaw } from 'vue';
 
@@ -32,7 +32,7 @@ export default ({
 				duration: 2, 
 				y: 10, 
 				repeatDelay: 4,
-				...loopSineinOut
+				...loopSineInOut
 				}, 0)
 			})
 			timeline
@@ -41,7 +41,7 @@ export default ({
 				x: "random(-10, 100)",
 				rotateZ: 1,
 				duration: "random(1, 4)",
-				...loopSineinOut,
+				...loopSineInOut,
 				repeatRefresh: true
 			},0)
 			.fromTo(head, {x: -10, rotateZ: -3},{
@@ -50,7 +50,7 @@ export default ({
 				repeatDelay: 3,
 				duration: "random(1, 4)",
 				transformOrigin: '50% 50%',
-				...loopSineinOut,
+				...loopSineInOut,
 				repeatRefresh: true,
 			},0)
 			.fromTo(handLeft, {y: 5, rotateZ: 5},{
@@ -59,7 +59,7 @@ export default ({
 				duration: 4,
 				repeatDelay: 3,
 				transformOrigin: '80% 10%',
-				...loopSineinOut	
+				...loopSineInOut	
 			},0)
         },
     },

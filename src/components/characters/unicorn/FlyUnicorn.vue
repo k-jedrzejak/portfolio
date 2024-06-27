@@ -6,7 +6,7 @@
 <script>
 import FlyUnicornSvg from './FlyUnicornSvg.vue';
 import gsap from 'gsap';
-import {loopSineinOut} from '@/constants';
+import {loopSineInOut} from '@/constants';
 
 export default ({
     name: 'FlyUnicorn',
@@ -34,7 +34,7 @@ export default ({
               rotateZ: 5,
               duration: 1.3,
               transformOrigin: "100% 50%",
-              ...loopSineinOut,
+              ...loopSineInOut,
             },0 )
         })
 
@@ -45,7 +45,7 @@ export default ({
               x: 1,
               duration: 1.3,
               transformOrigin: "50% 50%",
-              ...loopSineinOut
+              ...loopSineInOut
             },0 )
         })
 
@@ -54,7 +54,7 @@ export default ({
         .fromTo(uni, { rotateZ: 1}, {
           rotateZ: "random(2, 6)",
           duration: "random(1, 2)",
-          ...loopSineinOut,
+          ...loopSineInOut,
           repeatRefresh: true
         },0)
         /* umbrella */	
@@ -63,7 +63,7 @@ export default ({
               x: 1,
               duration: 1,
               transformOrigin: "50% 50%",
-              ...loopSineinOut
+              ...loopSineInOut
             },0 )
 
         /* umbrella stick */	
@@ -72,7 +72,7 @@ export default ({
             x: -2.5,
             duration: 1,
             transformOrigin: "50% 50%",
-            ...loopSineinOut
+            ...loopSineInOut
         },0 )
 
         /* hand  */	
@@ -80,7 +80,7 @@ export default ({
             rotateZ: -2,
             duration: 1,
             transformOrigin: "100% 100%",
-            ...loopSineinOut
+            ...loopSineInOut
           },0 )
 
         /* eye  */	

@@ -4,7 +4,7 @@
 
 <script>
 import TheToasterSvg from './TheToasterSvg.vue';
-import {loop, loopSineinOut, loopJump} from '@/constants'
+import {basicLoop, loopSineInOut, loopJump} from '@/constants'
 import { setAnimation } from '../switchAnimation';
 import { isProxy, toRaw } from 'vue';
 
@@ -43,7 +43,7 @@ export default ({
 						y: 20,
 						transformOrigin: '100% 50%',
 						duration: 4,
-						...loopSineinOut,
+						...loopSineInOut,
 					})
 				}
 				else{
@@ -54,14 +54,14 @@ export default ({
 						duration: index + 1 ,
 						delay: index + 1,
 						repeatDelay: index + 1,
-						...loopSineinOut,
+						...loopSineInOut,
 					},0)
 				}
 
 				timeline.fromTo(star, {scale: "random(0.7, 1)"}, {
 					scale: .5,
 					duration: 1,
-					...loopSineinOut,
+					...loopSineInOut,
 					repeatRefresh: true
 				},0)
 			});
@@ -86,7 +86,7 @@ export default ({
 				scaleY: 0.5,
 				opacity: .85,
 				duration: 1,
-				...loopSineinOut
+				...loopSineInOut
 			})
 
 			/* toaster button */	
@@ -94,7 +94,7 @@ export default ({
 				y: 25,
 				duration: 1,
 				repeatDelay: 1,
-				...loop
+				...basicLoop
 			}, 0)
 
 			/* toaster eyes */	
@@ -133,24 +133,24 @@ export default ({
 				y: -10,
 				x: 0,
 				rotate: 0,
-				...loopSineinOut
+				...loopSineInOut
 			}, 0)
 			.to(bread, {
 				x: 20,
 				duration:2,
-				...loopSineinOut
+				...loopSineInOut
 			}, 0)
 			.to(bread, {
 				rotate: 40,
 				transformOrigin: '50% 50%',
 				duration:7,
-				...loopSineinOut
+				...loopSineInOut
 			}, 0)
 			.to(bread, {
 				y:20,
 				transformOrigin: '50% 50%',
 				duration:2,
-				...loopSineinOut
+				...loopSineInOut
 			}, 0)
 
 			/* bread arms */
@@ -158,7 +158,7 @@ export default ({
 				rotate: 20,
 				duration:1,
 				transformOrigin: '50% 50%',
-				...loopSineinOut
+				...loopSineInOut
 			}, 0)
 
 
@@ -195,7 +195,7 @@ export default ({
 					transformOrigin: '100% 60%',
 					duration: 2,
 					repeatDelay: 2,
-					...loop
+					...basicLoop
 				},0)
 			})
 		}
