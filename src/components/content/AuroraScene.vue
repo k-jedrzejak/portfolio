@@ -78,8 +78,8 @@ export default {
 }
 
 #astroMagento {
-  @include absolute(20vh, 0);
-  @include size(35vh,100vh);
+  @include absolute(22vh, 0);
+  @include size(32vh,100vh);
   z-index: 3;
   filter: brightness(0.9);
 }
