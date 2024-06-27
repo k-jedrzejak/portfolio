@@ -114,7 +114,6 @@ export default {
   #astroTime {
     @include size(400px);
     @include absolute(-16vh, -3vh, null, null);
-    filter: brightness(1);
   }
 
   #clock {
@@ -126,10 +125,10 @@ export default {
 // Desktop
 @media screen and (min-width: $screen-desktop) {
   #ceLogo {
-    @include absolute(0vw, -5vw, null, initial);
+    @include absolute(0vw, -8vw, null, initial);
     filter: brightness(1);
     svg {
-      @include size(20vw, 20vw);
+      @include size(25vw, 25vw);
     }
   }
 
@@ -138,6 +137,7 @@ export default {
     transform: scaleX(1);
     @include size(initial);
     @include size(400px);
+    filter: brightness(1);
   }
 
   #clock {

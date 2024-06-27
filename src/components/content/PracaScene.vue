@@ -78,6 +78,7 @@
   #astroWork {
     @include absolute(null, 3rem, 5rem, null);
     @include size(55vw, auto);
+    filter: brightness(0.9);
   }
 
 
@@ -86,6 +87,7 @@
     #pracaLogo {
       @include size(40vw);
       @include absolute(20%, null, null, 10%);
+      filter:brightness(1.2);
     }
 
     #astroWork {
@@ -98,9 +100,11 @@
     #pracaLogo {
       @include size(30vw);
       @include absolute(20%, null, null, 25%);
+      filter:brightness(1.6);
     }
     #astroWork {
       @include absolute(null, 8rem, 3rem, null);
+      filter: brightness(1);
     }
   }
     

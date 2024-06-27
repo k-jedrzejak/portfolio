@@ -81,6 +81,7 @@ export default {
   @include absolute(-100px, 0);
   @include size(250px);
   z-index: 3;
+  filter: brightness(0.9);
 }
 
 // Tablet
@@ -103,6 +104,7 @@ export default {
 
   #astroMagento {
     @include size(400px);
+    filter: brightness(1);
   }
 }
 

@@ -344,8 +344,8 @@ export default {
           },
         })
         .to("#adrinoLogo", {
-          scale: 0.3,
-          y: -300,
+          scale: 0.2,
+          x: -300,
           rotateX: 360,
           duration: 1500,
         });
@@ -542,6 +542,7 @@ export default {
           },
         })
         .to("#euroLogo", {
+          alpha: 0,
           scale: 0,
           duration: 2000,
         });
