@@ -78,7 +78,7 @@ export default {
           {
             yPercent: -70,
             xPercent: -40,
-            alpha: 0,
+            autoAlpha: 0,
           },
           0.5
         )
@@ -95,7 +95,7 @@ export default {
           {
             yPercent: -40,
             xPercent: 100,
-            alpha: 0,
+            autoAlpha: 0,
           },
           0.5
         )
@@ -112,7 +112,7 @@ export default {
           {
             yPercent: -85,
             xPercent: 60,
-            alpha: 0,
+            autoAlpha: 0,
           },
           0.5
         );
@@ -133,7 +133,7 @@ export default {
         .from(
           "#exp .title",
           {
-            alpha: 0,
+            autoAlpha: 0,
             y: 100,
             duration: 1700,
           },
@@ -142,7 +142,7 @@ export default {
         .from(
           "#exp .text",
           {
-            alpha: 0,
+            autoAlpha: 0,
             y: -100,
             duration: 700,
           },
@@ -179,7 +179,7 @@ export default {
         .from(
           "#ceTitle .title",
           {
-            alpha: 0,
+            autoAlpha: 0,
             y: 200,
             rotateY: 360,
             duration: 2000,
@@ -189,7 +189,7 @@ export default {
         .from(
           "#ceTitle .text",
           {
-            alpha: 0,
+            autoAlpha: 0,
             x: -50,
             duration: 1000,
           },
@@ -198,7 +198,7 @@ export default {
         .from(
           "#ceLogo",
           {
-            alpha: 0,
+            autoAlpha: 0,
             yPercent: -20,
             duration: 2500,
           },
@@ -207,7 +207,7 @@ export default {
         .from(
           "#astroTime",
           {
-            alpha: 0,
+            autoAlpha: 0,
             xPercent: 0,
             duration: 10000,
           },
@@ -216,7 +216,7 @@ export default {
         .from(
           "#clock",
           {
-            alpha: 0,
+            autoAlpha: 0,
             yPercent: 100,
             duration: 10000,
           },
@@ -243,7 +243,7 @@ export default {
         .to("#ceLogo", {
           yPercent: 100,
           duration: 5000,
-          alpha: 0,
+          autoAlpha: 0,
         })
         .addLabel("endOfCeLogo")
         .to(
@@ -290,7 +290,7 @@ export default {
         .from(
           "#adrinoTitle .title",
           {
-            alpha: 0,
+            autoAlpha: 0,
             y: 200,
             rotateX: 360,
             duration: 2000,
@@ -300,7 +300,7 @@ export default {
         .from(
           "#adrinoTitle .text",
           {
-            alpha: 0,
+            autoAlpha: 0,
             rotateX: 270,
             y: 300,
             duration: 2000,
@@ -310,17 +310,17 @@ export default {
         .from(
           "#adrinoLogo",
           {
-            alpha: 0,
-            scale: 0.2,
+            autoAlpha: 0,
+            scale: 1,
             x: -300,
-            duration: 2100,
+            duration: 3000,
           },
           0
         )
         .from(
           "#ufoRhino",
           {
-            alpha: 0,
+            autoAlpha: 0,
             xPercent: 20,
             scale: 0.2,
             duration: 10000,
@@ -344,10 +344,11 @@ export default {
           },
         })
         .to("#adrinoLogo", {
-          scale: 0.2,
-          x: -300,
-          rotateX: 360,
-          duration: 1500,
+          scale: 1,
+          x: 1000,
+          autoAlpha: 0,
+          //rotateX: 360,
+          duration: 1300,
         });
 
       gsap
@@ -394,7 +395,7 @@ export default {
         .from(
           "#auroraTitle .title",
           {
-            alpha: 0,
+            autoAlpha: 0,
             y: -200,
             rotateX: 360,
             duration: 2000,
@@ -402,7 +403,7 @@ export default {
           0
         )
         .from("#auroraTitle .text", {
-          alpha: 0,
+          autoAlpha: 0,
           rotateX: 270,
           y: 200,
           duration: 2000,
@@ -410,7 +411,7 @@ export default {
         .from(
           "#acLogo",
           {
-            alpha: 0,
+            autoAlpha: 0,
             scale: 0.2,
             rotateX: 270,
             y: 200,
@@ -421,7 +422,7 @@ export default {
         .from(
           "#astroMagento",
           {
-            alpha: 0,
+            autoAlpha: 0,
             xPercent: 20,
             scale: 0.2,
             duration: 10000,
@@ -465,7 +466,7 @@ export default {
         .to("#astroMagento", {
           xPercent: -550,
           duration: 25000,
-          scale: 2,
+          scale: 2.5,
         });
     },
 
@@ -493,7 +494,7 @@ export default {
         .from(
           "#euroTitle .title",
           {
-            alpha: 0,
+            autoAlpha: 0,
             x: -400,
             rotateY: 270,
             duration: 3000,
@@ -503,8 +504,7 @@ export default {
         .from(
           "#euroTitle .text",
           {
-            alpha: 0,
-
+            autoAlpha: 0,
             rotateY: 270,
             x: 400,
             duration: 3000,
@@ -512,7 +512,7 @@ export default {
           1
         )
         .from("#euroLogo", {
-          alpha: 0,
+          autoAlpha: 0,
           scale: 0.2,
           yPercent: 100,
           duration: 2000,
@@ -520,7 +520,7 @@ export default {
         .from(
           "#planetScene",
           {
-            alpha: 0,
+            autoAlpha: 0,
             duration: 800,
           },
           0
@@ -542,7 +542,7 @@ export default {
           },
         })
         .to("#euroLogo", {
-          alpha: 0,
+          autoAlpha: 0,
           scale: 0,
           duration: 2000,
         });
@@ -577,7 +577,7 @@ export default {
           scrollTrigger: {
             trigger: "#pracaTitle",
             start: "top 50%",
-            end: "+=800",
+            end: "+=1200",
             scrub: 1,
             pin: false,
             onEnter: () => (this.isPlaying.AstroWork = true),
@@ -591,27 +591,27 @@ export default {
           autoAlpha: 1,
         })
         .from("#pracaTitle .title", {
-          alpha: 0,
+          autoAlpha: 0,
           y: -200,
           rotateX: 270,
           duration: 1000,
         })
         .from("#pracaTitle .text", {
-          alpha: 0,
+          autoAlpha: 0,
           rotateX: 270,
           y: 200,
           duration: 1000,
         })
         .from("#pracaLogo", {
-          alpha: 0,
-          scale: 0.2,
-          yPercent: 100,
-          duration: 600,
+          autoAlpha: 0,
+          scale: 0.4,
+          yPercent: 300,
+          duration: 1000,
         })
         .from(
           "#astroWork",
           {
-            alpha: 0,
+            autoAlpha: 0,
             xPercent: 20,
             duration: 4000,
           },
@@ -634,10 +634,10 @@ export default {
           },
         })
         .to("#pracaLogo", {
-          alpha: 0,
+          autoAlpha: 0,
           rotate: 0,
-          y: -100,
-          duration: 1000,
+          x: -200,
+          duration: 100,
         });
 
       gsap

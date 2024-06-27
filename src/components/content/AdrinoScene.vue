@@ -97,36 +97,40 @@ export default {
 
 <style lang="scss">
 #adrinoLogo {
-  @include absolute(15vh, null, null, 20vw);
+  @include absolute(15vh, 4vh, null, null);
   z-index: 10;
 }
 
+#adrinoLogoImage {
+  @include size(25vh);
+}
+
 #ufoRhino {
-  @include absolute(-30vh, 0);
-  @include size(320px);
+  @include absolute(15vh, 0);
+  @include size(40vh, 100vh);
   z-index: 3;
 }
 
 // Tablet
 @media screen and (min-width: $screen-tablet) {
   #adrinoLogo {
-    @include absolute(20vh, null, null, 40vw);
+    @include absolute(12vh, 2vh, null, null);
   }
 
   #ufoRhino {
-    @include absolute(-10vh, 0);
-    @include size(500px);
+    @include absolute(12vh, 0);
+    @include size(40vh);
   }
 }
 
 // Desktop
 @media screen and (min-width: $screen-desktop) {
   #adrinoLogo {
-    @include absolute(30vh, null, null, 5vw);
+    @include absolute(30vh, null, null, 10vh);
   }
 
   #ufoRhino {
-    @include absolute(16vh, 0);
+    @include absolute(18vh, 0);
     @include size(auto);
   }
 }

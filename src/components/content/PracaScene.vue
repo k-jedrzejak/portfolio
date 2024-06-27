@@ -70,14 +70,14 @@
 
 <style lang="scss">
   #pracaLogo {
-    @include absolute(15%, null, null, 10%);
-    @include size(70vw);
+    @include absolute(15vh, null, null, 3vh);
+    @include size(30vh);
     z-index: 10;
   }
 
   #astroWork {
-    @include absolute(null, 3rem, 5rem, null);
-    @include size(55vw, auto);
+    @include absolute(null, 2vh, 8vh, null);
+    @include size(52vh, auto);
     filter: brightness(0.9);
   }
 
@@ -85,25 +85,26 @@
   // Tablet
   @media screen and (min-width: $screen-tablet) {
     #pracaLogo {
-      @include size(40vw);
-      @include absolute(20%, null, null, 10%);
+      @include size(40vh);
+      @include absolute(20vh, null, null, 10vh);
       filter:brightness(1.2);
     }
 
     #astroWork {
-      @include size(30vw, auto);
+      @include size(40vh, auto);
     }
   }
 
   // Desktop
   @media screen and (min-width: $screen-desktop) {
     #pracaLogo {
-      @include size(30vw);
-      @include absolute(20%, null, null, 25%);
+      @include size(45vh);
+      @include absolute(25vh, null, null, 50vh);
       filter:brightness(1.6);
     }
     #astroWork {
-      @include absolute(null, 8rem, 3rem, null);
+      @include size(65vh);
+      @include absolute(null, 8vh, 10vh, null);
       filter: brightness(1);
     }
   }

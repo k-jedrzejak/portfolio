@@ -83,49 +83,50 @@ export default {
 #ceLogo {
   @include absolute(5vh, null, null, 50%);
   transform: translateX(-50%);
-  filter: brightness(0.8);
+  filter: brightness(0.7);
+  z-index: 4;
   svg {
     @include size(35vh, 35vh);
   }
 }
 #astroTime {
   @include absolute(-4vh, 2vh, null, null);
-  @include size(250px, 100vh);
+  @include size(30vh, 100vh);
   transform: scaleX(-1);
   z-index: 3;
   filter: brightness(0.9)
 }
 
 #clock {
-  @include size(200px, 100vh);
-  @include absolute(8vh, 2vh, null, null);
+  @include size(26vh, 100vh);
+  @include absolute(8vh, 0, null, null);
 }
 
 // Tablet
 @media screen and (min-width: $screen-tablet) {
   #ceLogo {
-    @include absolute(3vw, null, null, 35vw);
+    @include absolute(3vw, null, null, 50%);
 
     svg {
-      @include size(30vw, 30vw);
+      @include size(40vw, 40vw);
     }
   }
 
   #astroTime {
-    @include size(400px);
-    @include absolute(-16vh, -3vh, null, null);
+    @include size(40vh);
+    @include absolute(-13vh, -3vh, null, null);
   }
 
   #clock {
-    @include size(290px);
-    @include absolute(1vh, -1vh, null, null);
+    @include size(30vh);
+    @include absolute(3vh, -2vh, null, null);
   }
 }
 
 // Desktop
 @media screen and (min-width: $screen-desktop) {
   #ceLogo {
-    @include absolute(0vw, -8vw, null, initial);
+    @include absolute(0vw, -15vh, null, initial);
     filter: brightness(1);
     svg {
       @include size(25vw, 25vw);
@@ -133,16 +134,16 @@ export default {
   }
 
   #astroTime {
-    @include absolute(0, null, null, 5vh);
+    @include absolute(0, null, null, 0);
     transform: scaleX(1);
     @include size(initial);
-    @include size(400px);
+    @include size(55vh);
     filter: brightness(1);
   }
 
   #clock {
-    @include absolute(21vh, null, null, 2vh);
-    @include size(350px);
+    @include absolute(21vh, null, null, 0);
+    @include size(45vh);
     filter: brightness(1.2);
   }
 }
