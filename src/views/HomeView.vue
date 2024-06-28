@@ -464,7 +464,7 @@ export default {
           },
         })
         .to("#astroMagento", {
-          xPercent: -550,
+          xPercent: -800,
           duration: 25000,
           scale: 2.5,
         });
