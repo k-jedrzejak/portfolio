@@ -511,12 +511,16 @@ export default {
           },
           1
         )
-        .from("#euroLogo", {
-          autoAlpha: 0,
-          scale: 0.2,
-          yPercent: 100,
-          duration: 2000,
-        })
+        .from(
+          "#euroLogo",
+          {
+            autoAlpha: 0,
+            scale: 0.2,
+            yPercent: 100,
+            duration: 2000,
+          },
+          0
+        )
         .from(
           "#planetScene",
           {
@@ -602,12 +606,16 @@ export default {
           y: 200,
           duration: 1000,
         })
-        .from("#pracaLogo", {
-          autoAlpha: 0,
-          scale: 0.4,
-          yPercent: 300,
-          duration: 1000,
-        })
+        .from(
+          "#pracaLogo",
+          {
+            autoAlpha: 0,
+            scale: 0.4,
+            yPercent: 300,
+            duration: 1000,
+          },
+          0
+        )
         .from(
           "#astroWork",
           {
