@@ -7,6 +7,7 @@
     <AuroraScene :isPlaying="isPlaying.AstroMagento" />
     <EuroScene :isPlaying="isPlaying.ToasterPlanet" />
     <PracaScene :isPlaying="isPlaying.AstroWork" />
+    <AirbusScene :isPlaying="isPlaying.AstroTime" />
     <SpineLine />
   </div>
 </template>
@@ -24,6 +25,7 @@ import { ref, onMounted } from "vue";
 import { removeBodyClass, addBodyClass } from "@/utils";
 import SpineLine from "@/components/SpineLine.vue";
 import CeScene from "@/components/content/CeScene.vue";
+import AirbusScene from "@/components/content/AirbusScene.vue";
 
 export default {
   name: "HomeView",
@@ -36,6 +38,7 @@ export default {
     ExpScene,
     SpineLine,
     CeScene,
+    AirbusScene,
   },
   data() {
     return {
@@ -154,7 +157,6 @@ export default {
           y: -100,
         });
     },
-
     playCe() {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -265,7 +267,6 @@ export default {
           "endOfCeLogo"
         );
     },
-
     playAdrino() {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -291,7 +292,7 @@ export default {
           "#adrinoTitle .title",
           {
             autoAlpha: 0,
-            y: 200,
+            y: 100,
             rotateX: 360,
             duration: 2000,
           },
@@ -302,7 +303,7 @@ export default {
           {
             autoAlpha: 0,
             rotateX: 270,
-            y: 300,
+            y: 200,
             duration: 2000,
           },
           0
@@ -347,7 +348,6 @@ export default {
           scale: 1,
           x: 1000,
           autoAlpha: 0,
-          //rotateX: 360,
           duration: 1300,
         });
 
@@ -370,7 +370,6 @@ export default {
           scale: 0,
         });
     },
-
     playAurora() {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -469,7 +468,6 @@ export default {
           scale: 2.5,
         });
     },
-
     playEuro() {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -478,7 +476,7 @@ export default {
           scrollTrigger: {
             trigger: "#euroTitle",
             start: "top 50%",
-            end: "+=900",
+            end: "+=800",
             scrub: 1,
             pin: false,
             onEnter: () => (this.isPlaying.ToasterPlanet = true),
@@ -548,7 +546,8 @@ export default {
         .to("#euroLogo", {
           autoAlpha: 0,
           scale: 0,
-          duration: 2000,
+          y: -300,
+          duration: 500,
         });
 
       gsap
@@ -572,7 +571,6 @@ export default {
           rotate: 360,
         });
     },
-
     playPraca() {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -653,7 +651,7 @@ export default {
           scrollTrigger: {
             trigger: "#praca3",
             start: "top top",
-            end: "+=1",
+            end: "+=500",
             scrub: 1,
             pin: false,
             onLeave: () => (this.isPlaying.AstroWork = false),
@@ -667,6 +665,117 @@ export default {
           scale: 2,
         });
     },
+    playAirbus() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#airbusTitle",
+            end: "+=800",
+            start: "top 50%",
+            scrub: 2,
+            pin: false,
+            onEnter: () => (this.isPlaying.AstroTime = true),
+            onLeaveBack: () => (this.isPlaying.AstroTime = false),
+          },
+        })
+        .set("#airbusTitle .title-container", {
+          autoAlpha: 1,
+        })
+        .set("#airbus1 .animations-container", {
+          autoAlpha: 0.8,
+        })
+        .from(
+          "#airbusTitle .title",
+          {
+            autoAlpha: 0,
+            y: 200,
+            x: -200,
+            duration: 1500,
+          },
+          0
+        )
+        .from(
+          "#airbusTitle .text",
+          {
+            autoAlpha: 0,
+            y: -200,
+            x: 200,
+            duration: 2000,
+          },
+          0
+        )
+        .from(
+          "#airbusLogo",
+          {
+            autoAlpha: 0,
+            yPercent: 20,
+            duration: 2500,
+          },
+          0
+        )
+        .from(
+          "#astroTime",
+          {
+            autoAlpha: 0,
+            xPercent: 0,
+            duration: 10000,
+          },
+          0
+        )
+        .from(
+          "#clock",
+          {
+            autoAlpha: 0,
+            yPercent: 100,
+            duration: 10000,
+          },
+          0
+        )
+        .to("#airbusTitle .title, #airbusTitle .text", {
+          autoAlpha: 0,
+          duration: 900,
+          y: -200,
+        });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#airbus2",
+            start: "top 35%",
+            end: "+=800",
+            scrub: 1,
+            pin: false,
+            onLeave: () => (this.isPlaying.AstroTime = false),
+            onEnterBack: () => (this.isPlaying.AstroTime = true),
+          },
+        })
+        .to("#airbusLogo", {
+          yPercent: 100,
+          duration: 5000,
+          autoAlpha: 0,
+        })
+        .addLabel("endOfAirbusLogo")
+        .to(
+          "#astroTime",
+          {
+            duration: 4500,
+            autoAlpha: 0,
+            yPercent: -100,
+          },
+          "endOfAirbusLogo"
+        )
+        .to(
+          "#clock",
+          {
+            duration: 4500,
+            yPercent: 100,
+            autoAlpha: 0,
+          },
+          "endOfAirbusLogo"
+        );
+    },
   },
 
   mounted() {
@@ -676,6 +785,7 @@ export default {
     this.playAurora();
     this.playEuro();
     this.playPraca();
+    this.playAirbus();
   },
 
   setup() {

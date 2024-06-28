@@ -5,11 +5,10 @@
 </template>
 
 <script>
-
-import EuroSvg from './EuroSvg.vue'
+import EuroSvg from "./EuroSvg.vue";
 
 export default {
-  name: 'EuroLogo',
-  components: { EuroSvg }
-}
+  name: "EuroLogo",
+  components: { EuroSvg },
+};
 </script>
