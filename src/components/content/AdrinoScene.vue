@@ -10,10 +10,7 @@
 
     <SceneSection id="adrino1">
       <TextBlock>
-        <p>
-          From December 2022's start to September 2023's end, my journey
-          unfolded
-        </p>
+        <p>My adventure into the magical world of advertising</p>
         <p class="big">
           as a
           <strong class="color">JavaScript Developer</strong><br />
