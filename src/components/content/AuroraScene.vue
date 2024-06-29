@@ -1,73 +1,88 @@
 <template>
   <div class="auroraScene">
     <TitleSection scene="auroraTitle">
-      <TitleFunction selectorId="auroraCreation" subtitle="// from: February 2021" subtitle2="// to: December 2022"></TitleFunction>
+      <TitleFunction
+        selectorId="auroraCreation"
+        subtitle="// from: February 2021"
+        subtitle2="// to: December 2022"
+      ></TitleFunction>
     </TitleSection>
-   
+
     <SceneSection id="aurora1">
       <TextBlock>
-        <p>This adventure lasted from February 2021 to December 2022</p>
+        <p>In this quest in the vast expanse of e-commerce</p>
         <p class="big">
           I was a
-          <strong class="color">Frontend Developer</strong><br/>
+          <strong class="color">Frontend Developer</strong><br />
           @
           <a
             href="https://www.auroracreation.pl/"
             target="_blank"
             title="Visit AC website"
-          >Aurora Creation</a
+            >Aurora Creation</a
           >.
         </p>
         <p>
-          Software House implementing, simplifying, customizing and developing Magento for top Polish eCommerce brands.
+          Software House implementing, simplifying, customizing and developing
+          Magento for top Polish eCommerce brands.
         </p>
       </TextBlock>
       <template #animeContainer>
         <AcLogo />
-        <AstroMagento :isPlaying="isPlaying"/>
+        <AstroMagento :isPlaying="isPlaying" />
       </template>
     </SceneSection>
 
     <SceneSection id="aurora2">
       <TextBlock>
-        <p>During that time</p> 
-        <p class="big">I delivered <strong class="color">new functionalities and adjusted the appearance of online stores</strong></p>
-        <p> based on graphic designs.</p>
+        <p>During that time</p>
+        <p class="big">
+          I delivered
+          <strong class="color"
+            >new functionalities and adjusted the appearance of online
+            stores</strong
+          >
+        </p>
+        <p>based on graphic designs.</p>
       </TextBlock>
     </SceneSection>
 
     <SceneSection id="aurora3">
       <TextBlock>
-        <p>Taking care of</p> 
-        <p class="big"><strong class="color">code quality, optimization and improvement of store efficiency</strong>.</p>
+        <p>Taking care of</p>
+        <p class="big">
+          <strong class="color"
+            >code quality, optimization and improvement of store
+            efficiency</strong
+          >.
+        </p>
       </TextBlock>
     </SceneSection>
   </div>
 </template>
 
 <script>
-
-import TitleSection from '../TitleSection.vue'
-import TitleFunction from '../TitleFunction.vue'
-import TextBlock from '../TextBlock.vue'
-import SceneSection from '../SceneSection.vue'
-import AcLogo from '../logotypes/AC/AcLogo.vue'
-import AstroMagento from '../characters/magento/AstroMagento.vue'
+import TitleSection from "../TitleSection.vue";
+import TitleFunction from "../TitleFunction.vue";
+import TextBlock from "../TextBlock.vue";
+import SceneSection from "../SceneSection.vue";
+import AcLogo from "../logotypes/AC/AcLogo.vue";
+import AstroMagento from "../characters/magento/AstroMagento.vue";
 
 export default {
-  name: 'AuroraScene',
+  name: "AuroraScene",
   components: {
     TitleSection,
     TitleFunction,
     TextBlock,
     SceneSection,
     AcLogo,
-    AstroMagento
-},
-  props: {
-      isPlaying: Boolean,
+    AstroMagento,
   },
-}
+  props: {
+    isPlaying: Boolean,
+  },
+};
 </script>
 
 <style lang="scss">
@@ -79,7 +94,7 @@ export default {
 
 #astroMagento {
   @include absolute(22vh, 0);
-  @include size(32vh,100vh);
+  @include size(32vh, 100vh);
   z-index: 3;
   filter: brightness(0.9);
 }
@@ -109,5 +124,4 @@ export default {
     @include absolute(10vh, 0 null, null);
   }
 }
-
 </style>

@@ -10,10 +10,10 @@
 
     <SceneSection id="euro1">
       <TextBlock>
-        <p>From August 2019 to February 2021</p>
+        <p>I delved into the world of sales</p>
         <p class="big">
-          I was a
-          <strong class="color">Junior Frontend Developer</strong> <br />
+          as a
+          <strong class="color">Frontend Developer</strong> <br />
           @ Euro-Net.
         </p>
         <p>
