@@ -123,7 +123,7 @@ export default {
 #astroAir {
   @include absolute(null, null, 5vh, 0);
   svg {
-    @include size(14vh, 17vh);
+    @include size(20vh, 20vh);
     filter: brightness(0.9);
   }
 }
