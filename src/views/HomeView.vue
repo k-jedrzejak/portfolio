@@ -7,7 +7,7 @@
     <AuroraScene :isPlaying="isPlaying.AstroMagento" />
     <EuroScene :isPlaying="isPlaying.ToasterPlanet" />
     <PracaScene :isPlaying="isPlaying.AstroWork" />
-    <AirbusScene :isPlaying="isPlaying.AstroTime" />
+    <AirbusScene :isPlaying="isPlaying.TheJupiter" />
     <SpineLine />
   </div>
 </template>
@@ -48,6 +48,7 @@ export default {
         ToasterPlanet: false,
         AstroWork: false,
         AstroTime: false,
+        TheJupiter: false,
       },
     };
   },
@@ -676,8 +677,8 @@ export default {
             start: "top 50%",
             scrub: 2,
             pin: false,
-            onEnter: () => (this.isPlaying.AstroTime = true),
-            onLeaveBack: () => (this.isPlaying.AstroTime = false),
+            onEnter: () => (this.isPlaying.TheJupiter = true),
+            onLeaveBack: () => (this.isPlaying.TheJupiter = false),
           },
         })
         .set("#airbusTitle .title-container", {
@@ -716,20 +717,22 @@ export default {
           0
         )
         .from(
-          "#astroTime",
+          "#jupiterScene",
           {
             autoAlpha: 0,
-            xPercent: 0,
-            duration: 10000,
+            scale: 0.2,
+            x: 20,
+            y: 20,
+            duration: 800,
           },
           0
         )
         .from(
-          "#clock",
+          "#astroAir",
           {
             autoAlpha: 0,
-            yPercent: 100,
-            duration: 10000,
+            xPercent: -50,
+            duration: 800,
           },
           0
         )
@@ -747,34 +750,13 @@ export default {
             end: "+=800",
             scrub: 1,
             pin: false,
-            onLeave: () => (this.isPlaying.AstroTime = false),
-            onEnterBack: () => (this.isPlaying.AstroTime = true),
           },
         })
         .to("#airbusLogo", {
           yPercent: 100,
           duration: 5000,
           autoAlpha: 0,
-        })
-        .addLabel("endOfAirbusLogo")
-        .to(
-          "#astroTime",
-          {
-            duration: 4500,
-            autoAlpha: 0,
-            yPercent: -100,
-          },
-          "endOfAirbusLogo"
-        )
-        .to(
-          "#clock",
-          {
-            duration: 4500,
-            yPercent: 100,
-            autoAlpha: 0,
-          },
-          "endOfAirbusLogo"
-        );
+        });
     },
   },
 

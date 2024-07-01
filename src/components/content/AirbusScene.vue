@@ -34,41 +34,37 @@
       </TextBlock>
       <template #animeContainer>
         <AirbusLogo />
-        <div id="astro-clock-container">
-          <AstroTime :isPlaying="isPlaying" />
-          <TheClock :isPlaying="isPlaying" />
-        </div>
+        <TheJupiter :isPlaying="isPlaying" />
+        <AstroAir :isPlaying="isPlaying" />
       </template>
     </SceneSection>
 
     <SceneSection id="airbus2">
       <TextBlock>
-        <p>My mission echoed among the stars,</p>
+        <p>My mission echoed among the stars</p>
         <p class="big">
-          working on the <strong class="color">ESA</strong> project -
-          <strong class="color">JUICE</strong> probe, destined to unveil the
-          secrets of <strong class="color">Jupiter's moons</strong>.
+          as I worked on the
+          <strong class="color">ESA's JUICE probe</strong> project, destined to
+          unveil the secrets of <strong class="color">Jupiter's moons</strong>.
         </p>
       </TextBlock>
     </SceneSection>
 
     <SceneSection id="airbus3">
       <TextBlock>
-        <p>By selecting elements for its</p>
+        <p>By selecting components for its</p>
         <p class="big">
           <strong class="color">electrical harnesses</strong> and
-          <strong class="color">scripting programs</strong> for machines to test
-          them, I bridged the heavens and the earth through precision and
-          innovation.
+          <strong class="color">developing programs</strong> to test them using
+          advanced machinery,
+        </p>
+        <p>
+          I bridged the heavens and the earth through precision and innovation.
         </p>
       </TextBlock>
     </SceneSection>
   </div>
 </template>
-
-By selecting elements for its electrical harnesses and scripting programs for
-machines to test these harnesses, I bridged the heavens and the earth through
-precision and innovation.
 
 <script>
 import TitleSection from "../TitleSection.vue";
@@ -76,8 +72,8 @@ import TitleFunction from "../TitleFunction.vue";
 import TextBlock from "../TextBlock.vue";
 import SceneSection from "../SceneSection.vue";
 import AirbusLogo from "../logotypes/Airbus/AirbusLogo.vue";
-import AstroTime from "../characters/astronaut/AstroTime.vue";
-import TheClock from "../characters/clock/TheClock.vue";
+import TheJupiter from "../characters/jupiter/TheJupiter.vue";
+import AstroAir from "../characters/airastro/AstroAir.vue";
 
 export default {
   name: "AirbusScene",
@@ -87,8 +83,8 @@ export default {
     TextBlock,
     SceneSection,
     AirbusLogo,
-    AstroTime,
-    TheClock,
+    TheJupiter,
+    AstroAir,
   },
   props: {
     isPlaying: Boolean,
@@ -97,75 +93,103 @@ export default {
 </script>
 
 <style lang="scss">
-#astro-clock-container {
-  position: relative;
-  height: 100vh;
-}
 #airbusLogo {
   @include absolute(5vh, null, null, 50%);
   transform: translateX(-50%);
-  filter: brightness(0.7);
+  filter: brightness(2);
   z-index: 4;
+
   svg {
     @include size(35vh, 35vh);
   }
 }
-#astroTime {
-  @include absolute(21vh, 2vh, null, null);
-  @include size(30vh, 100vh);
-  transform: scaleX(-1);
-  z-index: 3;
+
+.jupiter {
+  @include size(35vh, 35vh);
+  @include absolute(17vh, -2vh, null, null);
   filter: brightness(0.9);
 }
 
-#clock {
-  @include size(26vh, 100vh);
-  @include absolute(34vh, 0, null, null);
+.probe {
+  @include size(45vh, 45vh);
+  @include absolute(12vh, -7vh, null, null);
+
+  #theProbe {
+    @include size(10vh, 10vh);
+    filter: brightness(0.9);
+  }
+}
+
+#astroAir {
+  @include absolute(null, null, 5vh, 0);
+  svg {
+    @include size(14vh, 17vh);
+    filter: brightness(0.9);
+  }
 }
 
 // Tablet
 @media screen and (min-width: $screen-tablet) {
   #airbusLogo {
-    @include absolute(3vw, null, null, 50%);
-
+    @include absolute(15vh, null, null, 22vh);
     svg {
-      @include size(40vw, 40vw);
+      @include size(30vh, 30vh);
+    }
+  }
+  .jupiter {
+    @include size(35vh, 35vh);
+    @include absolute(17vh, 8vh, null, null);
+  }
+
+  .probe {
+    @include size(45vh, 45vh);
+    @include absolute(12vh, 3vh, null, null);
+
+    #theProbe {
+      @include size(10vh, 10vh);
     }
   }
 
-  #astroTime {
-    @include size(40vh);
-    @include absolute(-13vh, -3vh, null, null);
-  }
+  #astroAir {
+    @include absolute(null, null, 5vh, 0);
 
-  #clock {
-    @include size(30vh);
-    @include absolute(3vh, -2vh, null, null);
+    svg {
+      @include size(21vh, 24vh);
+    }
   }
 }
 
 // Desktop
 @media screen and (min-width: $screen-desktop) {
   #airbusLogo {
-    @include absolute(0vw, -15vh, null, initial);
-    filter: brightness(1);
+    @include absolute(35vh, null, null, 22vh);
     svg {
-      @include size(25vw, 25vw);
+      @include size(40vh, 20vh);
+    }
+  }
+  .jupiter {
+    @include size(50vh, 50vh);
+    @include absolute(10vh, 2vh, null, null);
+    filter: brightness(1);
+  }
+
+  .probe {
+    @include size(65vh, 65vh);
+    @include absolute(3vh, -5vh, null, null);
+
+    #theProbe {
+      @include size(15vh, 15vh);
+      filter: brightness(1);
     }
   }
 
-  #astroTime {
-    @include absolute(0, null, null, 0);
-    transform: scaleX(1);
-    @include size(initial);
-    @include size(55vh);
-    filter: brightness(1);
-  }
+  #astroAir {
+    @include absolute(null, null, 5vh, 0);
 
-  #clock {
-    @include absolute(21vh, null, null, 0);
-    @include size(45vh);
-    filter: brightness(1.2);
+    svg {
+      @include size(32vh, 35vh);
+      filter: brightness(1);
+    }
   }
 }
 </style>
