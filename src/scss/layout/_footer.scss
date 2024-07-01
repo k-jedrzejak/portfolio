@@ -10,6 +10,7 @@
     background: $color-black;
     @include transition;
     @include relative;
+    margin-top: $indent-xxxl;
     
     .footer-icon {
       padding: 0 $indent-base;
