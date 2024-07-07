@@ -1,9 +1,9 @@
 import Enemy from "./Enemy.js";
 import { MovingDirection } from "../constants/constants.js";
 
-import enemy1Image from "@/assets/game/enemy1.png";
-import enemy2Image from "@/assets/game/enemy2.png";
-import enemy3Image from "@/assets/game/enemy3.png";
+import enemy1Image from "@/assets/game/enemy1.webp";
+import enemy2Image from "@/assets/game/enemy2.webp";
+import enemy3Image from "@/assets/game/enemy3.webp";
 
 export default class EnemyController {
   enemyMap = [
