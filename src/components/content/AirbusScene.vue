@@ -44,8 +44,14 @@
         <p>My mission echoed among the stars</p>
         <p class="big">
           as I worked on the
-          <strong class="color">ESA's JUICE probe</strong> project, destined to
-          unveil the secrets of <strong class="color">Jupiter's moons</strong>.
+          <a
+            href="https://www.airbus.com/en/space/exploration/solar-system/juice"
+            target="_blank"
+            title="Visit Juice Project website"
+            ><strong class="color">ESA's JUICE probe</strong></a
+          >
+          project, destined to unveil the secrets of
+          <strong class="color">Jupiter's moons</strong>.
         </p>
       </TextBlock>
     </SceneSection>
