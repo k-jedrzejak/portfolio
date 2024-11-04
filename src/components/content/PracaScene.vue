@@ -3,8 +3,8 @@
     <TitleSection scene="pracaTitle">
       <TitleFunction
         selectorId="pracaPl"
-        subtitle="// from: March 2019"
-        subtitle2="// to: August 2019"
+        subtitle="// from: October 2018"
+        subtitle2="// to: March 2019"
       ></TitleFunction>
     </TitleSection>
 

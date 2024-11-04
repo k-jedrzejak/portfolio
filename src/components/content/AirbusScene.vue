@@ -3,8 +3,8 @@
     <TitleSection scene="airbusTitle">
       <TitleFunction
         selectorId="airbus"
-        subtitle="// from: August 2018"
-        subtitle2="// to: March 2019"
+        subtitle="// from: February 2017"
+        subtitle2="// to: October 2018"
       ></TitleFunction>
     </TitleSection>
     <SceneSection id="airbus1">

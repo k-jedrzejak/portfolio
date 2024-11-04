@@ -3,7 +3,7 @@
     <TitleSection scene="euroTitle">
       <TitleFunction
         selectorId="euroNet"
-        subtitle="// from: August 2019"
+        subtitle="// from: March 2019"
         subtitle2="// to: February 2021"
       ></TitleFunction>
     </TitleSection>
